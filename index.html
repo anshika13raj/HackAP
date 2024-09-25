@@ -1,6 +1,6 @@
 <style>
   .onboarding-container {
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: #202020;
     display: flex;
     max-width: 100%;
@@ -11,37 +11,42 @@
     color: #fcfcfc;
     letter-spacing: -0.05px;
     margin: 0 auto;
-    padding: 60px 22px 50px;
+    padding: 40px 20px;
     font: 700 16px Poppins, sans-serif;
   }
 
   .onboarding-image {
-    aspect-ratio: 0.97;
-    object-fit: contain;
+    aspect-ratio: 1;
+    object-fit: cover;
     object-position: center;
-    width: 200px;
-    max-width: 100%;
+    width: 80%;
+    max-width: 200px;
     margin-top: 10px;
   }
 
   .step-indicator {
-    align-self: stretch;
     display: flex;
     margin-top: 20px;
     align-items: center;
     gap: 5px;
     color: #f7f7f8;
     font-weight: 500;
-    white-space: nowrap;
-    text-align: center;
     justify-content: center;
   }
 
   .step-number {
     display: flex;
     flex-direction: column;
-    width: 30px;
-    margin: auto 0;
+    width: 25px;
+  }
+
+  .step-circle {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .step-number-active {
@@ -54,40 +59,23 @@
     color: #f7f7f8;
   }
 
-  .step-circle {
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    padding: 0 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .step-separator {
-    aspect-ratio: 5.99;
+    width: 10px;
     object-fit: contain;
-    object-position: center;
-    width: 12px;
-    align-self: stretch;
-    margin: auto 0;
   }
 
   .onboarding-title {
-    font-size: 20px;
-    letter-spacing: -0.09px;
+    font-size: 18px;
     text-align: center;
     margin-top: 20px;
   }
 
   .cta-button {
-    align-self: stretch;
-    border-radius: 14px;
-    margin-top: 15px;
-    gap: 10px;
-    font-size: 16px;
-    letter-spacing: -0.07px;
-    padding: 14px;
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-size: 15px;
+    padding: 12px;
     background-color: #fb724c;
     border: none;
     color: #fcfcfc;
@@ -107,11 +95,11 @@
   }
 
   .register-link {
+    font-weight: 700;
     color: #fb724c;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
     text-decoration: none;
-    display: block;
   }
 
   .visually-hidden {
@@ -126,31 +114,35 @@
     border: 0;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media (max-width: 480px) {
     .onboarding-container {
-      padding: 40px 15px 40px;
-    }
-
-    .onboarding-title {
-      font-size: 18px;
-    }
-
-    .cta-button {
-      font-size: 15px;
-      padding: 12px;
+      padding: 30px 15px;
     }
 
     .onboarding-image {
-      width: 180px;
+      width: 70%;
     }
 
-    .step-number {
-      width: 25px;
+    .onboarding-title {
+      font-size: 16px;
+    }
+
+    .cta-button {
+      font-size: 14px;
+      padding: 10px;
     }
 
     .step-circle {
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
+    }
+
+    .sign-in-prompt {
+      font-size: 14px;
+    }
+
+    .register-link {
+      font-size: 14px;
     }
   }
 </style>
