@@ -1,0 +1,159 @@
+<style>
+    .onboarding-container {
+      border-radius: 30px;
+      background-color: #202020;
+      display: flex;
+      max-width: 480px;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      align-items: center;
+      color: #fcfcfc;
+      letter-spacing: -0.05px;
+      margin: 0 auto;
+      padding: 132px 22px 82px;
+      font: 700 13px Poppins, sans-serif;
+    }
+    
+    .onboarding-image {
+      aspect-ratio: 0.97;
+      object-fit: contain;
+      object-position: center;
+      width: 250px;
+      max-width: 100%;
+    }
+    
+    .step-indicator {
+      align-self: stretch;
+      display: flex;
+      margin-top: 130px;
+      align-items: center;
+      gap: 5px;
+      color: #f7f7f8;
+      font-weight: 500;
+      white-space: nowrap;
+      text-align: center;
+      justify-content: center;
+    }
+    
+    .step-number {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      width: 30px;
+      margin: auto 0;
+    }
+    
+    .step-number-active {
+      background-color: #fcfcfc;
+      color: #000;
+    }
+    
+    .step-number-inactive {
+      background-color: #404040;
+      color: #f7f7f8;
+    }
+    
+    .step-circle {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      padding: 0 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .step-separator {
+      aspect-ratio: 5.99;
+      object-fit: contain;
+      object-position: center;
+      width: 12px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    
+    .onboarding-title {
+      font-size: 22px;
+      letter-spacing: -0.09px;
+      text-align: center;
+      margin-top: 15px;
+    }
+    
+    .cta-button {
+      align-self: stretch;
+      border-radius: 14px;
+      margin-top: 15px;
+      gap: 10px;
+      font-size: 17px;
+      letter-spacing: -0.07px;
+      padding: 16px 74px;
+      background-color: #fb724c;
+      border: none;
+      color: #fcfcfc;
+      cursor: pointer;
+    }
+    
+    .sign-in-prompt {
+      font-weight: 500;
+      text-align: center;
+      margin-top: 21px;
+    }
+    
+    .sign-in-link {
+      font-weight: 700;
+      color: #fb724c;
+      text-decoration: none;
+    }
+    
+    .register-link {
+      color: #fb724c;
+      text-align: center;
+      margin-top: 11px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <section class="onboarding-container">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/64e50986456acc4406872609e82af8a0c070d27208e01093b4c87ecf00fec653?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Onboarding illustration" class="onboarding-image" />
+      
+      <div class="step-indicator">
+        <div class="step-number">
+          <div class="step-circle step-number-active">1</div>
+        </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/46d6b2aab0bd3e7a8289a8086d03dfc74e39c50c7d63e25266b7aeede532f95a?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="step-separator" />
+        <div class="step-number">
+          <div class="step-circle step-number-inactive">2</div>
+        </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/46d6b2aab0bd3e7a8289a8086d03dfc74e39c50c7d63e25266b7aeede532f95a?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="step-separator" />
+        <div class="step-number">
+          <div class="step-circle step-number-inactive">3</div>
+        </div>
+      </div>
+      
+      <h2 class="onboarding-title">Find Lawyers near you!</h2>
+      
+      <form>
+        <label for="getStartedButton" class="visually-hidden">Get Started</label>
+        <button id="getStartedButton" class="cta-button">Get Started</button>
+      </form>
+      
+      <p class="sign-in-prompt">
+        Already a member? <a href="#" class="sign-in-link">Sign in</a>
+      </p>
+      
+      <a href="#" class="register-link">Register</a>
+    </section>

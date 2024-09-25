@@ -1,0 +1,276 @@
+<style>
+    .chat-interface {
+      transform: rotate(1.387778863499512e-17rad);
+      border-radius: 30px;
+      background-color: #fcfcfc;
+      display: flex;
+      max-width: 480px;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 24px 0 15px;
+    }
+    
+    .chat-header {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 4px 0 19px;
+    }
+    
+    .chat-progress {
+      align-self: stretch;
+      display: flex;
+      align-items: start;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    
+    .chat-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 40px;
+    }
+    
+    .progress-steps {
+      display: flex;
+      margin-top: 5px;
+      flex-direction: column;
+    }
+    
+    .step-numbers {
+      transform: rotate(-1.3877783671911887e-17rad);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #fff;
+      white-space: nowrap;
+      text-align: center;
+      letter-spacing: -0.05px;
+      justify-content: center;
+      font: 500 13px Poppins, sans-serif;
+    }
+    
+    .step {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      color: #000;
+      width: 30px;
+      margin: auto 0;
+    }
+    
+    .step-active {
+      background-color: #fdb453;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      padding: 0 3px;
+    }
+    
+    .step-inactive {
+      background-color: #807c7c;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      padding: 0 3px;
+    }
+    
+    .step-separator {
+      aspect-ratio: 5.99;
+      object-fit: contain;
+      object-position: center;
+      width: 12px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    
+    .chat-status {
+      background-color: #69de33;
+      border-radius: 50%;
+      align-self: end;
+      display: flex;
+      margin-top: 17px;
+      width: 30px;
+      flex-direction: column;
+      align-items: center;
+      height: 30px;
+    }
+    
+    .status-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+    }
+    
+    .chat-avatar {
+      aspect-ratio: 0.93;
+      object-fit: contain;
+      object-position: center;
+      width: 112px;
+      margin-top: 190px;
+      max-width: 100%;
+    }
+    
+    .chat-prompt {
+      color: #b0b0b0;
+      letter-spacing: -0.65px;
+      margin-top: 31px;
+      font: 500 17px Poppins, sans-serif;
+    }
+    
+    .chat-actions {
+      display: flex;
+      margin-top: 195px;
+      width: 100%;
+      padding-left: 19px;
+      flex-direction: column;
+      align-items: start;
+    }
+    
+    .quick-actions-title {
+      color: #b0b0b0;
+      letter-spacing: -0.65px;
+      font: 500 12px Poppins, sans-serif;
+    }
+    
+    .predictive-responses {
+      transform: rotate(-1.3877775400106748e-17rad);
+      background-color: rgba(168, 185, 227, 0);
+      align-self: end;
+      display: flex;
+      height: 60px;
+      width: 100%;
+      max-width: 329px;
+      padding-top: 16px;
+      align-items: start;
+      gap: 8px;
+      color: var(--Schemes-On-Secondary-Container, #1d192b);
+      letter-spacing: var(--Body-Large-Tracking, 0.5px);
+      justify-content: end;
+      font: 400 var(--Body-Large-Size, 16px) / var(--Body-Large-Line-Height, 24px) var(--Body-Large-Font, Roboto);
+    }
+    
+    .response-bubble {
+      align-self: stretch;
+      border-radius: 20px;
+      background-color: #fdb453;
+      min-height: 44px;
+      padding: 8px 16px;
+    }
+    
+    .response-bubble-alt {
+      align-self: stretch;
+      border-radius: 20px 20px 8px 20px;
+      background-color: #fdb453;
+      min-height: 44px;
+      padding: 8px 0 8px 16px;
+    }
+    
+    .chat-input-container {
+      display: flex;
+      margin-top: 15px;
+      gap: 17px;
+    }
+    
+    .mic-button {
+      border-radius: 14px;
+      background-color: #e9e7e7;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 0 17px;
+    }
+    
+    .mic-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 10px;
+    }
+    
+    .chat-input {
+      border-radius: 14px;
+      background-color: #e9e7e7;
+      display: flex;
+      gap: 2px;
+      color: #a7a6a6;
+      letter-spacing: -0.65px;
+      flex-grow: 1;
+      flex-basis: auto;
+      padding: 9px 12px;
+      font: 500 17px Poppins, sans-serif;
+    }
+    
+    .input-indicator {
+      border-radius: 1px;
+      background-color: #fb724c;
+      display: flex;
+      width: 2px;
+      height: 27px;
+    }
+    
+    .input-placeholder {
+      flex-basis: auto;
+      flex-grow: 1;
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <section class="chat-interface">
+      <header class="chat-header">
+        <div class="chat-progress">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2159cf600b5506509c871441367ac50d06fc128aea6d6d2008017f2a5a21598b?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Chat interface icon" class="chat-icon" />
+          <div class="progress-steps">
+            <div class="step-numbers">
+              <div class="step"><div class="step-active">1</div></div>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="step-separator" />
+              <div class="step"><div class="step-inactive">2</div></div>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="step-separator" />
+              <div class="step"><div class="step-inactive">3</div></div>
+            </div>
+            <div class="chat-status">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dec72845a141eefbc35924856fc789ddefc4273826485ab975f730a0aeda8aac?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Active status indicator" class="status-icon" />
+            </div>
+          </div>
+        </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ce07cb9e4185e80524a4afbf34de74604570699b4ca01763046f05717ddf3416?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Chat avatar" class="chat-avatar" />
+        <p class="chat-prompt">Type or state your issue</p>
+      </header>
+      <main class="chat-actions">
+        <h2 class="quick-actions-title">Quick Actions</h2>
+        <div class="predictive-responses">
+          <button class="response-bubble">Request Lawyers nearby</button>
+          <button class="response-bubble-alt">get minor legal advice</button>
+        </div>
+        <form class="chat-input-container">
+          <button type="button" class="mic-button" aria-label="Activate voice input">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e02dbf82f46377e4ff6708fb3bfcc3432b0e6adc9c04e9813072789e3b511e2?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="mic-icon" />
+          </button>
+          <div class="chat-input">
+            <div class="input-indicator"></div>
+            <label for="chatInput" class="visually-hidden">Ask an Eagle</label>
+            <input type="text" id="chatInput" class="input-placeholder" placeholder="Ask an Eagle" aria-label="Ask an Eagle" />
+          </div>
+        </form>
+      </main>
+    </section>
