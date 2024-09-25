@@ -1,0 +1,255 @@
+<style>
+    .number-circle {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #FEFEFE;
+    }
+  
+    .number-circle-active {
+      background-color: #FDB453;
+    }
+  
+    .number-circle-inactive {
+      background-color: #807C7C;
+    }
+  
+    .start-offer-container {
+      border-radius: 30px;
+      background-color: #FCFCFC;
+      max-width: 480px;
+      width: 100%;
+      font-family: Poppins, sans-serif;
+      margin: 0 auto;
+      padding: 21px 0 35px;
+    }
+  
+    .offer-header {
+      display: flex;
+      width: 100%;
+      padding-left: 25px;
+      flex-direction: column;
+      font-weight: 500;
+    }
+  
+    .numbering-container {
+      display: flex;
+      width: 90%;
+      gap: 2px;
+      font-size: 13px;
+      justify-content: space-between;
+    }
+  
+    .icon-start {
+      aspect-ratio: 0.78;
+      object-fit: contain;
+      object-position: center;
+      width: 21px;
+      align-self: start;
+    }
+  
+    .numbering-steps {
+      display: flex;
+      align-items: center;
+      margin-left: 50px;
+      gap: 0px;
+      justify-content: center;
+    }
+  
+    .step-connector {
+      aspect-ratio: 5.99;
+      object-fit: contain;
+      object-position: center;
+      width: 12px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+  
+    .offer-title {
+      border-radius: 30px;
+      min-height: 25px;
+      font-family: sans-serif;
+      margin-left: 30px;
+      padding: 5px 30px;
+      margin-left: 120px;
+
+    }
+  
+    .offer-content {
+      display: flex;
+      margin-top: 25px;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      padding: 0 1px;
+    }
+  
+    .divider {
+      /* aspect-ratio: 166.67; */
+      /* object-fit: contain; */
+      /* object-position: center; */
+      margin-top: -20px;
+      margin-left: 0;
+      width: 100%;
+      /* align-self: stretch; */
+    }
+  
+    .category-list {
+      display: flex;
+      margin-top: 15px;
+      width: 100%;
+      max-width: 300px;
+      /* align-items: start; */
+      gap: 15px;
+      /* overflow: hidden; */
+      /* white-space: nowrap; */
+      line-height: 2;
+      /* justify-content: start; */
+    }
+  
+    .badge {
+      font-feature-settings: "liga" off, "clig" off;
+      border-radius: 30px;
+      min-height: 25px;
+      margin-left: 30px;
+      padding: 5px 30px;
+
+    }
+  
+    .badge-active {
+
+        text-align: center;
+        display: inline-block;
+      background-color: #FDB453;
+      color: #fff;
+    }
+  
+    .badge-inactive {
+      color: #070000;
+      background-color: #BABABA;
+    }
+  
+    .input-field {
+      font-feature-settings: "liga" off, "clig" off;
+      align-self: auto;
+      border-radius: 10px;
+      border: 1px solid #BABABA;
+      background-color: #fff;
+      min-height: 50px;
+      margin-left: 57px;
+      color: #BABABA;
+      text-align: left;
+      line-height: 1;
+      padding: 0 100px;
+      margin-top: 20px;
+    }
+  
+    .input-field-overlap {
+      z-index: 10;
+      margin-top: -50px;
+    }
+  
+    .start-bid-button {
+      /* align-self: stretch; */
+      /* border-radius: 14px;
+      align-self: auto;
+      background-color: #FDB453;
+      margin-top: 300px;
+      font-size: 17px;
+      color: #000;
+      line-height: 1;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: -0.07px;
+      padding: 0 100px; */
+      align-self: auto;
+      border-radius: 10px;
+      border: 1px solid #BABABA;
+      background-color: #FDB453;
+      min-height: 50px;
+      margin-left: 117px;
+      color: #050000;
+      line-height: 1;
+      padding: 0 100px;
+      margin-top: 300px;
+    }
+  
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+  
+  <section class="start-offer-container">
+    <header class="offer-header">
+      <div class="numbering-container">
+        <img 
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/1eac42bfbe69686180f1a81675d987cedd0de9667ffdeb2e9b8f0118c9b13f43?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" 
+          alt="" 
+          class="icon-start" 
+        />
+        <div class="numbering-steps">
+          <div class="number-circle number-circle-inactive">1</div>
+          <img 
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" 
+            alt="" 
+            class="step-connector" 
+          />
+          <div class="number-circle number-circle-active">2</div>
+          <img 
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" 
+            alt="" 
+            class="step-connector" 
+          />
+          <div class="number-circle number-circle-inactive">3</div>
+        </div>
+      </div>
+      <h1 class="offer-title">Send Offer</h1>
+    </header>
+  
+    <main class="offer-content">
+      <img 
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" 
+        alt="" 
+        class="divider" 
+      />
+      <div class="category-list">
+        <span class="badge  badge-active">Bid</span>
+        <span class="badge badge-inactive">One-time</span>
+      </div>
+  
+      <form>
+        <label for="startingBid" class="visually-hidden"></label>
+        <input 
+          type="number" 
+          id="startingBid" 
+          class="input-field" 
+          placeholder="Starting Bid (In Rupees)" 
+        />
+        
+        <label for="endBid" class="visually-hidden"></label>
+        <input 
+          type="number" 
+          id="endBid" 
+          class="input-field" 
+          placeholder="End Bid at (In Rupees)" 
+        />
+        
+        <button type="submit" class="start-bid-button">Start Bid</button>
+      </form>
+    </main>
+  </section>
+  
