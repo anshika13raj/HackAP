@@ -1,0 +1,284 @@
+<style>
+    .profile-driver {
+      transform: rotate(1.387778863499512e-17rad);
+      border-radius: 30px;
+      background-color: #fcfcfc;
+      display: flex;
+      max-width: 480px;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      align-items: center;
+      color: #bababa;
+      margin: 0 auto;
+      padding: 24px 19px 60px;
+      font: 400 14px Poppins, sans-serif;
+    }
+    
+    .profile-header {
+      align-self: stretch;
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+      color: #2b2b2b;
+      font-weight: 500;
+      white-space: nowrap;
+      letter-spacing: -0.08px;
+      justify-content: space-between;
+    }
+    
+    .profile-icon {
+        aspect-ratio: 1;
+      margin-top: -20px;
+      margin-left: 10px;
+      object-fit: contain;
+      object-position: center;
+      width: 40px;
+    }
+    
+    .profile-title {
+        margin-top: 10px;
+      margin-left: 100px;
+      margin-right: 190px;
+    }
+    
+    .profile-image {
+      
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      display: flex;
+      margin-top: 15px;
+      width: 183px;
+      height: 230px;
+      border: 3px solid #000;
+    }
+    
+    .input-field {
+      font-feature-settings: "liga" off, "clig" off;
+      align-self: start;
+      border-radius: 10px;
+      border: 1px solid #bababa;
+      background-color: #fff;
+      margin-top: 31px;
+      min-height: 50px;
+      gap: 12px;
+      letter-spacing: 0.2px;
+      line-height: 1;
+      padding: 0 15px;
+    }
+
+    .input-field-phone {
+      display: flex;
+      margin-top: 4px;
+      min-height: 50px;
+      align-items: start;
+      
+      justify-content: start;
+      min-width: 300px;
+      width: 400px;
+    }
+
+    
+    .input-field-full-name {
+      display: flex;
+      margin-top: 50px;
+      min-height: 50px;
+      align-items: start;
+      
+      justify-content: start;
+      min-width: 300px;
+      width: 400px;
+    }
+    
+    .input-field-address {
+        display: flex;
+      align-self: center;
+      margin-top: 14px;
+      min-height: 130px;
+      width: 400px;
+
+
+      white-space: nowrap;
+    }
+    
+    .phone-input-wrapper {
+      align-self: start;
+      display: flex;
+      margin-top: 10px;
+      align-items: start;
+      letter-spacing: 0.2px;
+      line-height: 1;
+      justify-content: start;
+    }
+    
+    .phone-input {
+      font-feature-settings: "liga" off, "clig" off;
+      align-self: stretch;
+      border-radius: 10px;
+      border: 1px solid #bababa;
+      background-color: #fff;
+      min-width: 240px;
+      min-height: 50px;
+      width: 326px;
+      gap: 12px;
+      padding: 0 15px;
+    }
+    
+    .upload-section {
+      display: flex;
+      margin-top: 13px;
+      width: 100%;
+      gap: 17px;
+      white-space: nowrap;
+      text-align: center;
+      letter-spacing: 0.2px;
+      line-height: 20px;
+    }
+    
+    .upload-box {
+      align-items: center;
+      border-radius: 10px;
+      border: 1px solid #bababa;
+      background-color: #828282;
+      display: flex;
+      min-height: 99px;
+      gap: 12px;
+      text-align: center;
+      justify-content: start;
+      flex: 1;
+      padding: 0 15px;
+    }
+    
+    .upload-text {
+      /* font-feature-settings: "liga" off, "clig" off;
+      text-align: center;
+      width: 53px;
+      margin: auto 0; */
+      font-feature-settings: "liga" off, "clig" off;
+      z-index: 10;
+      width: 53px;
+      margin-left: 50px;
+      text-align: center;
+      padding: -2px 0 3px;
+    }
+    
+    .address-input {
+      align-items: center;
+      border-radius: 10px;
+      border: 1px solid #bababa;
+      background-color: #fff;
+      display: flex;
+      margin-top: 14px;
+      min-height: 116px;
+      gap: 12px;
+      white-space: nowrap;
+      letter-spacing: 0.2px;
+      line-height: 1;
+      justify-content: start;
+      padding: 0 15px 0 13px;
+    }
+    
+    .address-label {
+      font-feature-settings: "liga" off, "clig" off;
+      align-self: stretch;
+      width: 59px;
+      margin: auto 0;
+    }
+    
+    /* .save-button-wrapper {
+      border-radius: 5px;
+      background-color: #ea9a2f;
+      display: flex;
+      margin-top: 100px;
+      width: 100%;
+      margin-left: 70px;
+      max-width: 265px;
+      flex-direction: column;
+      font-size: 18px;
+      color: #434343;
+      font-weight: 600;
+    }
+    
+    .save-button {
+      transform: rotate(-1.3877783671911887e-17rad);
+      border-radius: 5px;
+      background-color: #fdb453;
+      padding: 11px 70px;
+    }
+     */
+
+     .save-profile-button {
+      border-radius: 5px;
+      background-color: #ea9a2f;
+      align-self: center;
+      display: flex;
+      margin-top: 55px;
+      width: 100%;
+      max-width: 265px;
+      margin-left: 75px;
+      flex-direction: column;
+      font-size: 18px;
+      color: #434343;
+      font-weight: 600;
+      justify-content: center;
+      padding: 1px 0;
+    }
+    
+    .save-profile-text {
+      transform: rotate(-1.3877759683676983e-17rad);
+      border-radius: 5px;
+      background-color: #fdb453;
+      z-index: 10;
+      color: #000;
+      padding: 11px 70px;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <section class="profile-driver">
+      <header class="profile-header">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9d4151bc452ed69eeb63d2bd1827edea168389ebce8c60c061d1bcee90e029b1?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" class="profile-icon" alt="Profile icon" />
+        <h1 class="profile-title">User Profile</h1>
+      </header>
+      <div class="profile-image" role="img" aria-label="Profile picture">
+        <img src="data:image/jpeg;base64,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" alt="Indian Lawyer" class="profile-image-content" />
+
+      </div>
+      <form>
+        <label for="fullName" class="visually-hidden">Full Name</label>
+        <input type="text" id="fullName" class="input-field input-field-full-name" placeholder="Full Name" aria-label="Full Name" />
+        
+        <div class="phone-input-wrapper">
+          <label for="phoneNumber" class="visually-hidden">Phone Number</label>
+          <input type="tel" id="phoneNumber" class="input-field input-field-phone" placeholder="Phone Number" aria-label="Phone Number" />
+        </div>
+        
+        <div class="upload-section">
+          <div class="upload-box" tabindex="0" role="button" aria-label="Upload License">
+            <span class="upload-text">UPLOAD<br> LICENSE</span>
+          </div>
+          <div class="upload-box" tabindex="0" role="button" aria-label="Upload Aadhar">
+            <span class="upload-text">UPLOAD <br>AADHAR</span>
+          </div>
+        </div>
+        
+        <label for="address" class="visually-hidden">Address</label>
+        <textarea id="address" class="input-field input-field-address" placeholder="Address" aria-label="Address"></textarea>
+        
+        <!-- <div class="save-button-wrapper">
+          <button type="submit" class="save-button">SAVE PROFILE</button>
+        </div> -->
+        <button type="submit" class="save-profile-button">
+            <span class="save-profile-text">SAVE PROFILE</span>
+          </button>
+      </form>
+    </section>
