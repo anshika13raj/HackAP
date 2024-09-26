@@ -1,0 +1,269 @@
+<style>
+    .payment-container {
+      border-radius: 30px;
+      background-color: #fcfcfc;
+      display: flex;
+      max-width: 480px;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      align-items: center;
+      color: #000;
+      font-weight: 400;
+      padding: 24px 0 43px 14px;
+      zoom:220%;
+    }
+    
+    .progress-bar {
+      align-self: flex-start;
+      display: flex;
+      width: 95%;
+      color: #fff;
+      white-space: nowrap;
+      text-align: center;
+      letter-spacing: -0.05px;
+      justify-content: space-between;
+      font: 500 13px Poppins, sans-serif;
+    }
+    
+    .progress-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 40px;
+    }
+    
+    .progress-steps {
+      display: flex;
+      align-items: center;
+      margin-left: 50px;
+      gap: 0px;
+      justify-content: center;
+    }
+    
+    .step-number {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      width: 30px;
+      margin: auto 0;
+      aspect-ratio: 5.99;
+      object-fit: contain;
+      object-position: center;
+      align-self: stretch;
+      margin-left: 0px;
+    }
+    
+    .step-number-circle {
+      background-color: #807c7c;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      padding: 0 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    
+    .step-number-active {
+      background-color: #fdb453;
+    }
+    
+    .step-connector {
+      aspect-ratio: 5.99;
+      object-fit: contain;
+      object-position: center;
+      width: 10px;
+      gap: 50px;
+      align-self: stretch;
+      margin-left: 4px;
+    }
+    
+    .section-title {
+      color: #2b2b2b;
+      letter-spacing: -0.08px;
+      align-self: flex-start;
+      margin-top: 20px;
+      margin-left: 30px;
+      font: 50 25px Poppins, sans-serif;
+    }
+    
+    .divider {
+      aspect-ratio: 166.67;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      align-self: flex-start;
+      margin-top: 30px;
+      margin-left: -10;
+      width: 100%;
+    }
+
+    .dividers {
+      aspect-ratio: 166.67;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      align-self: flex-start;
+      margin-top: 25px;
+      margin-left: -10;
+      width: 100%;
+      display:block;
+    }
+    
+    .user-name {
+      align-self: flex-start;
+      margin: 20px 0 0 21px;
+      font: 700 18px Poppins, sans-serif;
+    }
+    
+    .time-info {
+      display: flex;
+      width: 100%;
+      max-width: 259px;
+      margin-top: 20px;
+      margin-left: -100px;
+      gap: 20px;
+      font-size: 18px;
+      justify-content: space-between;
+    }
+    
+    .time-label {
+      font-family: Baskervville, sans-serif;
+    }
+    
+    .time-value {
+      font-family: Poppins, sans-serif;
+    }
+    
+    .expense-info {
+      display: flex;
+      width: 100%;
+      max-width: 259px;
+      margin-left: -100px;
+      font-family: Poppins, sans-serif;
+      gap: 20px;
+      font-size: 18px;
+      justify-content: space-between;
+      }
+    
+    
+    .expense-value {
+      margin-left: -60px;
+    }
+    
+    .terms-container {
+      display: flex;
+      margin-top: 500px;
+      width: 100%;
+      max-width: 270px;
+      align-items: flex-start;
+      gap: 6px;
+      font: 16px Poppins, sans-serif;
+    }
+    
+    .terms-icon {
+      object-fit: contain;
+      object-position: center;
+      width: 20px;
+    }
+    
+    .terms-text {
+      align-self: stretch;
+      width: 230px;
+      color: #807c7c;
+      width: auto;
+      margin:2px;
+      margin-top: -2px;
+    }
+    
+    .arrow-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 22px;
+    }
+    
+    .pay-button {
+      align-self: stretch;
+      border-radius: 14px;
+      background-color: #fdb453;
+      margin-top: 23px;
+      width: 100%;
+      max-width: 313px;
+      color: black;
+      text-align: center;
+      letter-spacing: -0.07px;
+      padding: 15px;
+      font: 700 18px Poppins, sans-serif;
+      border: none;
+      cursor: pointer;
+      align-self: auto;
+      border-radius: 10px;
+      border: 1px solid #BABABA;
+      background-color: #FDB453;
+      min-height: 50px;
+      margin-left: -10px;
+      color: #050000;
+      line-height: 1;
+      padding: 0 100px;
+      
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <section class="payment-container">
+      <div class="progress-bar">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2159cf600b5506509c871441367ac50d06fc128aea6d6d2008017f2a5a21598b?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" alt="" class="progress-icon" />
+        <div class="progress-steps">
+          <div class="step-number">
+            <div class="step-number-circle">1</div>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" alt="" class="step-connector" />
+          <div class="step-number">
+            <div class="step-number-circle">2</div>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" alt="" class="step-connector" />
+          <div class="step-number">
+            <div class="step-number-circle step-number-active">3</div>
+            
+          </div>
+        </div>
+      </div>
+      <h2 class="section-title">Payment</h2>
+      <img 
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" 
+      alt="" 
+      class="divider" 
+    />      <p class="user-name">Ms. Kriti Singh</p>
+      <div class="time-info">
+        <p class="time-label">
+          Total Time<span style="font-size: 8px; color: #a7a6a6;">(default)</span>
+        </p>
+        <p class="time-value">4 hours</p>
+      </div>
+      <div class="expense-info">
+        <p class="expense-label">Total Expense</p>
+        <p class="expense-value">₹ 10000</p>
+      </div>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9a4f9a576cbf9c1ebcf947054c0f21d163ef38a379309ef81cb67139cf74881a?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" alt="" class="dividers" />
+      
+      <div class="terms-container">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f0c76be2d4079b24f45fb468bef2ff2e7589ec41e1e41218cce139f1691636c4?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" alt="" class="terms-icon" />
+        <p class="terms-text">Read terms and conditions</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d650f076b8078f91f7c9bb38ed409acc286ffded244a3acbbbee09ade6634f52?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" alt="" class="arrow-icon" />
+      </div>
+      <button class="pay-button">Pay Now</button>
+    </section>
