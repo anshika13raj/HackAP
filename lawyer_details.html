@@ -1,243 +1,252 @@
 <style>
-    .lawyer-profile {
-      transform: rotate(1.387778863499512e-17rad);
-      border-radius: 30px;
-      background-color: #fcfcfc;
-      display: flex;
-      max-width: 480px;
-      width: 100%;
-      flex-direction: column;
-      overflow: hidden;
-      align-items: start;
-      color: #bababa;
-      margin: 0 auto;
-      padding: 28px 19px;
-      font: 400 14px Poppins, sans-serif;
-    }
-    
-    .profile-header {
-      align-self: stretch;
-      display: flex;
-      font-size: 20px;
-      color: #2b2b2b;
-      font-weight: 500;
-      text-align: center;
-      white-space: nowrap;
-      letter-spacing: -0.08px;
-      justify-content: space-between;
-    }
-    
-    .profile-icon {
-      aspect-ratio: 1;
-      margin-top: -20px;
-      margin-left: 10px;
-      object-fit: contain;
-      object-position: center;
-      width: 40px;
-    }
-        
-    .profile-title {
-      /* transform: rotate(-3.0182470303991904e-17rad); */
-      /* z-index: 10; */
-      margin-top: 0px;
-      margin-left: 100px;
-      margin-right: 200px;
-      /* padding: -7px 1px 6px; */
-    }
-    
-    .profile-image-section {
-      display: flex;
-      align-items: start;
-      gap: 20px;
-      white-space: nowrap;
-      margin-top: 30px;
-      text-align: center;
-      letter-spacing: 0.2px;
-      margin-left: 35px;
-      line-height: 20px;
-      /* margin: 31px 0 0 17px; */
-    }
-    
-    .profile-image {
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-      /* border-radius: 50%; */
-      display: flex;
-      margin-top: 5px;
-      width: 141.5px;
-      height: 150px;
-      margin-left: 10px;
-      border: 3px solid #000;
-    }
-    
-    .upload-buttons {
-      display: flex;
-      flex-direction: column;
-      width: 200px;
-      margin-top: 0px;
-      margin-left: 30px;
-      text-align: center;
-    }
-    
-    .upload-button {
-      align-items: center;
-      border-radius: 10px;
-      border: 1px solid #bababa;
-      background-color: #828282;
-      display: flex;
-      text-align: center;
-      min-height: 71px;
-      gap: 12px;
-      justify-content: start;
-      padding: 0 15px;
-    }
-    
-    .upload-button:not(:first-child) {
-      margin-top: 16px;
-    }
-    
-    .upload-text {
-      font-feature-settings: "liga" off, "clig" off;
-      z-index: 10;
-      width: 250px;
-      margin: auto 0;
-      text-align: center;
-      padding: -2px 0 3px;
-    }
-    
-    .input-field {
-      font-feature-settings: "liga" off, "clig" off;
-      align-self: stretch;
-      border-radius: 10px;
-      border: 1px solid #bababa;
-      background-color: #fff;
-      letter-spacing: 0.2px;
-      line-height: 1;
-      padding: 0 15px;
-
-    }.input-field-phone {
-      display: flex;
-      margin-top: 10px;
-      min-height: 40px;
-      align-items: start;
-      margin-left: 40px;
-      justify-content: start;
-      min-width: 300px;
-      width: 400px;
-    }
-
-    
-    .input-field-full-name {
-      display: flex;
-      margin-top: 50px;
-      min-height: 40px;
-      align-items: start;
-      margin-left: 40px;
-      justify-content: start;
-      min-width: 300px;
-      width: 400px;
-    }
-    
-    .input-field-address {
-        display: flex;
-      align-self: center;
-      margin-top: 10px;
-      min-height: 90px;
-      width: 400px;
-      margin-left: 40px;
+  .lawyer-profile {
+    transform: rotate(1.387778863499512e-17rad);
+    border-radius: 30px;
+    background-color: #fcfcfc;
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: start;
+    color: #bababa;
+    margin-right: 30px;
+    padding: 28px 5px;
+    font: 400 14px Poppins, sans-serif;
+    zoom:230%;
+  }
+  
+  .profile-header {
+    align-self: stretch;
+    display: flex;
+    font-size: 20px;
+    color: #2b2b2b;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: -0.08px;
+    justify-content:space-around;
+  }
+  
+  /* .profile-icon {
+    aspect-ratio: 1;
+    margin-left: auto;
+    object-fit: contain;
+    object-position: center;
+    width: 70px;
+  } */
+  .profile-icon {
+    aspect-ratio: 1;
+    margin-left: 30px; /* Increased margin to shift right */
+    object-fit: contain;
+    object-position: center;
+    width: 70px;
+}
 
 
-      white-space: nowrap;
-    }
-    
-    .input-field-description {
-      align-items: center;
-      display: flex;
-      margin-top: 12px;
-      min-height: 86px;
-      justify-content: start;
-    }
-    
-    .save-profile-button {
-      border-radius: 5px;
-      background-color: #ea9a2f;
-      align-self: center;
-      display: flex;
-      margin-top: 55px;
-      width: 100%;
-      max-width: 265px;
-      margin-left: 100px;
-      flex-direction: column;
-      font-size: 18px;
-      color: #434343;
-      font-weight: 600;
-      justify-content: center;
-      padding: 1px 0;
-    }
-    
-    .save-profile-text {
-      transform: rotate(-1.3877759683676983e-17rad);
-      border-radius: 5px;
-      background-color: #fdb453;
-      z-index: 10;
-      color: #000;
-      padding: 11px 70px;
-    }
-    
-    .visually-hidden {
-      position: absolute;
-      width: 10px;
-      height: 4px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 10;
-    }
-    </style>
-    
-    <section class="lawyer-profile">
-      <header class="profile-header">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9d4151bc452ed69eeb63d2bd1827edea168389ebce8c60c061d1bcee90e029b1?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" alt="Profile icon" class="profile-icon" />
-        <h1 class="profile-title">Lawyer Details</h1>
-      </header>
       
-      <div class="profile-image-section">
-        <div class="profile-image" role="img" aria-label="Lawyer profile picture">
-            <img src="https://superlawyer.in/wp-content/uploads/2023/05/Raghav-Sabharwal-Photo-1-1933x2048.jpg" alt="Indian Lawyer" class="profile-image-content" />
-          </div>
-          
-        <div class="upload-buttons">
-          <button class="upload-button" tabindex="0">
-            <span class="upload-text">UPLOAD AADHAR</span>
-          </button>
-          <button class="upload-button" tabindex="0">
-            <span class="upload-text">UPLOAD DEGREE</span>
-          </button>
+  .profile-title {
+    /* transform: rotate(-3.0182470303991904e-17rad); */
+    /* z-index: 10; */
+    margin-top: 0px;
+    margin-left: 60px;
+    margin-right: 300px;
+    /* padding: -7px 1px 6px; */
+  }
+  
+  .profile-image-section {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    white-space: nowrap;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    margin-left: 35px;
+    line-height: 20px;
+    /* margin: 31px 0 0 17px; */
+  }
+  
+  .profile-image {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    /* border-radius: 50%; */
+    display: flex;
+    margin-top: 5px;
+    width: 141.5px;
+    height: 150px;
+    margin-left: 10px;
+    border: 3px solid #000;
+  }
+  
+  .upload-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-top: 0px;
+    margin-left: 30px;
+    text-align: center;
+  }
+  
+  .upload-button {
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #bababa;
+    background-color: #828282;
+    display: flex;
+    text-align: center;
+    min-height: 71px;
+    gap: 12px;
+    justify-content: start;
+    padding: 0 15px;
+  }
+  
+  .upload-button:not(:first-child) {
+    margin-top: 16px;
+  }
+  
+  .upload-text {
+    font-feature-settings: "liga" off, "clig" off;
+    z-index: 10;
+    width: 250px;
+    margin: auto 0;
+    text-align: center;
+    padding: -2px 0 3px;
+  }
+  
+  .input-field {
+    font-feature-settings: "liga" off, "clig" off;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid #bababa;
+    background-color: #fff;
+    letter-spacing: 0.2px;
+    line-height: 1;
+    padding: 0 15px;
+
+  }.input-field-phone {
+    display: flex;
+    margin-top: 10px;
+    min-height: 40px;
+    align-items: start;
+    margin-left: 40px;
+    justify-content: start;
+    min-width: 300px;
+    width: 400px;
+  }
+
+  
+  .input-field-full-name {
+    display: flex;
+    margin-top: 50px;
+    min-height: 40px;
+    align-items: start;
+    margin-left: 40px;
+    justify-content: start;
+    min-width: 300px;
+    width: 400px;
+  }
+  
+  .input-field-address {
+    display: flex;
+    align-self: center;
+    margin-top: 10px;
+    min-height: 90px;
+    width: 400px;
+    margin-left: 40px;
+
+
+    white-space: nowrap;
+  }
+  
+  .input-field-description {
+    align-items: center;
+    display: flex;
+    margin-top: 12px;
+    min-height: 86px;
+    justify-content: start;
+  }
+  
+  .save-profile-button {
+    border-radius: 5px;
+    background-color: #ea9a2f;
+    align-self: center;
+    display: flex;
+    margin-top: 55px;
+    width: 100%;
+    max-width: 265px;
+    margin-left: 100px;
+    flex-direction: column;
+    font-size: 18px;
+    color: #434343;
+    font-weight: 600;
+    justify-content: center;
+    padding: 1px 0;
+  }
+  
+  .save-profile-text {
+    transform: rotate(-1.3877759683676983e-17rad);
+    border-radius: 5px;
+    background-color: #fdb453;
+    z-index: 10;
+    color: #000;
+    padding: 11px 70px;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 10;
+  }
+  </style>
+  
+  <section class="lawyer-profile">
+    <header class="profile-header">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9d4151bc452ed69eeb63d2bd1827edea168389ebce8c60c061d1bcee90e029b1?placeholderIfAbsent=true&apiKey=039f7abbea1b41c7bba7e7cb9da949ef" alt="Profile icon" class="profile-icon" />
+      <h1 class="profile-title">Lawyer Details</h1>
+    </header>
+    
+    <div class="profile-image-section">
+      <div class="profile-image" role="img" aria-label="Lawyer profile picture">
+          <img src="https://superlawyer.in/wp-content/uploads/2023/05/Raghav-Sabharwal-Photo-1-1933x2048.jpg" alt="Indian Lawyer" class="profile-image-content" />
         </div>
-      </div>
-      
-      <form>
-        <label for="fullName" class="visually-hidden">Full Name</label>
-        <input type="text" id="fullName" class="input-field input-field-full-name" placeholder="Full Name" aria-label="Full Name" />
         
-        <label for="phoneNumber" class="visually-hidden">Phone Number</label>
-        <input type="tel" id="phoneNumber" class="input-field input-field-phone " placeholder="Phone Number" aria-label="Phone Number" />
-        
-        <label for="address" class="visually-hidden">Address</label>
-        <textarea id="address" class="input-field input-field-address" placeholder="Address" aria-label="Address"></textarea>
-        
-        <label for="experience" class="visually-hidden">Experience</label>
-        <input type="text" id="experience" class="input-field input-field-phone " placeholder="Experience" aria-label="Experience" />
-        
-        <label for="expertise" class="visually-hidden">Field of Expertise</label>
-        <input type="text" id="expertise" class="input-field input-field-phone" placeholder="Field of Expertise" aria-label="Field of Expertise" />
-        
-        <label for="description" class="visually-hidden">Short Description</label>
-        <textarea id="description" class="input-field input-field-address" placeholder="Short Description" aria-label="Short Description"></textarea>
-        
-        <button type="submit" class="save-profile-button">
-          <span class="save-profile-text">SAVE PROFILE</span>
+      <div class="upload-buttons">
+        <button class="upload-button" tabindex="0">
+          <span class="upload-text">UPLOAD AADHAR</span>
         </button>
-      </form>
-    </section>
+        <button class="upload-button" tabindex="0">
+          <span class="upload-text">UPLOAD DEGREE</span>
+        </button>
+      </div>
+    </div>
+    
+    <form>
+      <label for="fullName" class="visually-hidden">Full Name</label>
+      <input type="text" id="fullName" class="input-field input-field-full-name" placeholder="Full Name" aria-label="Full Name" />
+      
+      <label for="phoneNumber" class="visually-hidden">Phone Number</label>
+      <input type="tel" id="phoneNumber" class="input-field input-field-phone " placeholder="Phone Number" aria-label="Phone Number" />
+      
+      <label for="address" class="visually-hidden">Address</label>
+      <textarea id="address" class="input-field input-field-address" placeholder="Address" aria-label="Address"></textarea>
+      
+      <label for="experience" class="visually-hidden">Experience</label>
+      <input type="text" id="experience" class="input-field input-field-phone " placeholder="Experience" aria-label="Experience" />
+      
+      <label for="expertise" class="visually-hidden">Field of Expertise</label>
+      <input type="text" id="expertise" class="input-field input-field-phone" placeholder="Field of Expertise" aria-label="Field of Expertise" />
+      
+      <label for="description" class="visually-hidden">Short Description</label>
+      <textarea id="description" class="input-field input-field-address" placeholder="Short Description" aria-label="Short Description"></textarea>
+      
+      <button type="submit" class="save-profile-button">
+        <span class="save-profile-text">SAVE PROFILE</span>
+      </button>
+    </form>
+  </section>
