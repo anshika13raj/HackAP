@@ -1,0 +1,119 @@
+<style>
+    /* .chat-container { transform: rotate(1.387778863499512e-17rad); border-radius: 30px; background-color: #fcfcfc; display: flex; max-width: 480px; width: 100%; flex-direction: column; overflow: hidden; margin: 0 auto; padding: 24px 0 14px; } */
+    .chat-container {
+    transform: rotate(1.387778863499512e-17rad);
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    display: flex;
+    max-width: 100vw; /* Adjust to use full viewport width */
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0; /* Remove margins to fit perfectly */
+    padding: 22px 0; /* Keep vertical padding */
+    zoom: 180%;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+    .chat-content { display: flex; width: 100%; flex-direction: column; align-items: start; padding: 0 4px 0 14px; }
+    .user-info { display: flex; align-items: start; gap: 40px 93px; }
+    .user-profile { display: flex; flex-direction: column; color: #2b2b2b; letter-spacing: -0.08px; font: 500 20px Poppins, sans-serif; }
+    .profile-image { aspect-ratio: 1; object-fit: contain; object-position: center; width: 40px; }
+    .user-name { transform: rotate(-3.0182470303991904e-17rad); margin-top: 20px; }
+    .chat-progress { display: flex; margin-top: 5px; flex-direction: column; }
+    .progress-steps { transform: rotate(-1.3877783671911887e-17rad); display: flex; align-items: center; gap: 5px; color: #fff; white-space: nowrap; text-align: center; letter-spacing: -0.05px; justify-content: center; font: 500 13px Poppins, sans-serif; }
+    .step { align-self: stretch; display: flex; flex-direction: column; width: 30px; margin: auto 0; }
+    .step-number { background-color: #807c7c; border-radius: 50%; width: 30px; height: 30px; padding: 0 3px; }
+    .step-active { background-color: #fdb453;}
+    .step-connector { aspect-ratio: 5.99; object-fit: contain; object-position: center; width: 12px; align-self: stretch; margin: auto 0; }
+    .chat-status { background-color: #69de33; border-radius: 50%; align-self: end; display: flex; margin-top: 17px; width: 30px; flex-direction: column; align-items: center; height: 30px; }
+    .status-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 100%;margin-left: 1500%; }
+    .separator { aspect-ratio: 166.67; object-fit: contain; object-position: center; width: 100%; margin-top: 16px; }
+    .chat-info { transform: rotate(-1.3877775400106748e-17rad); align-self: center; margin-top: 12px; width: 100%; max-width: 264px; color: #b0b0b0; text-align: center; letter-spacing: -0.05px; font: 500 13px Poppins, sans-serif; }
+    .message { align-self: stretch; width: 235px; transform: rotate(-1.3877774572926234e-17rad); border-radius: 10px; background-color: #e9e7e7; min-height: 44px; color: var(--Schemes-On-Surface-Variant, #49454f); letter-spacing: var(--Title-Medium-Tracking, 0.15px); padding: 8px 16px; font: 500 var(--Title-Medium-Size, 16px) / var(--Title-Medium-Line-Height, 24px) var(--Title-Medium-Font, Roboto); }
+    .message-user { align-self: end; flex: 1; transform: rotate(-1.3877776227287262e-17rad); border-radius: 10px; background-color: #fdb453; min-height: 44px; margin-top: 15px; color: #1c1c1c; white-space: nowrap; text-align: right; letter-spacing: var(--Body-Large-Tracking, 0.5px); padding: 8px 16px; font: 400 var(--Body-Large-Size, 16px) / var(--Body-Large-Line-Height, 24px) var(--Body-Large-Font, Roboto); }
+    .message-group { display: flex; margin-top: 15px; width: 100%; flex-direction: column; padding: 0 16px; }
+    .upload-button { align-self: stretch; width: 66px; transform: rotate(-1.3877782017550859e-17rad); border-radius: 10px; margin-top: 5px; min-height: 36px; gap: 7px; color: #fcfcfd; white-space: nowrap; text-align: right; letter-spacing: -0.04px; padding: 11px 15px; font: 700 10px Poppins, sans-serif; }
+    .upload-icon { aspect-ratio: 1.4; object-fit: contain; object-position: center; width: 28px; z-index: 10; margin: -28px 0 0 16px; }
+    .file-preview { align-self: end; width: 105px; transform: rotate(-1.3877764646760066e-17rad); border-radius: 10px; background-color: #989898; min-height: 64px; margin-top: 7px; color: #fff; white-space: nowrap; text-align: center; line-height: var(--Body-Large-Line-Height, 24px); padding: 20px 16px; }
+    .action-button { transform: rotate(-1.3877768782662636e-17rad); border-radius: 10px; background-color: #49ad1b; margin-top: 8px; font-size: 12px; color: #fcfcfd; font-weight: 700; text-align: center; letter-spacing: -0.05px; padding: 10px 25px; }
+    .quick-actions-label { color: #b0b0b0; font-size: 12px; letter-spacing: -0.65px; margin-top: 278px; }
+    .predictive-responses { transform: rotate(-1.3877749757510815e-17rad); background-color: rgba(168, 185, 227, 0); display: flex; margin-top: -9px; min-height: 70px; width: 153px; max-width: 100%; align-items: start; gap: 8px; color: var(--Schemes-On-Secondary-Container, #1d192b); letter-spacing: var(--Body-Large-Tracking, 0.5px); justify-content: end; padding: 16px 16px 10px 15px; font: 400 var(--Body-Large-Size, 16px) / var(--Body-Large-Line-Height, 24px) var(--Body-Large-Font, Roboto); }
+    .response-bubble { align-self: stretch; border-radius: 20px; background-color: #fdb453; min-height: 44px; padding: 8px 16px; }
+    .input-area { align-self: center; display: flex; width: 100%; max-width: 342px; gap: 13px;margin-right: 20%; }
+    .input-icon { border-radius: 14px; background-color: #e9e7e7; align-self: start; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0 17px; }
+    .input-field { border-radius: 14px; background-color: #e9e7e7; display: flex; gap: 40px 100px; color: #a7a6a6; letter-spacing: -0.65px; flex-grow: 1; flex-basis: auto; padding: 9px 10px; font: 500 17px Poppins, sans-serif; }
+    .input-indicator { border-radius: 1px; background-color: #fb724c; display: flex; width: 2px; height: 27px; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    </style>
+    
+    <section class="chat-container">
+      <div class="chat-content">
+        <div class="user-info">
+          <div class="user-profile">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2159cf600b5506509c871441367ac50d06fc128aea6d6d2008017f2a5a21598b?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="User profile picture" class="profile-image">
+            <span class="user-name">Ms. Kriti S.</span>
+          </div>
+          <div class="chat-progress">
+            <div class="progress-steps">
+              <div class="step"><div class="step-number">1</div></div>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="step-connector">
+              <div class="step"><div class="step-number">2</div></div>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="step-connector">
+              <div class="step"><div class="step-number step-active">3</div></div>
+            </div>
+            <div class="chat-status">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dec72845a141eefbc35924856fc789ddefc4273826485ab975f730a0aeda8aac?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Chat active indicator" class="status-icon">
+            </div>
+          </div>
+        </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="separator">
+        <p class="chat-info">You're currently talking to Eagle<br>since there isn't enough information</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="separator">
+        <div class="message">Hey, please answer the following questions</div>
+        <div class="message">Please provide the vehicle<br>license number</div>
+        <div class="message-user">MHXXXXXXXX</div>
+      </div>
+      <div class="message-group">
+        <div class="message">Were any other vehicles involved?</div>
+        <div class="message-user">No</div>
+      </div>
+      <div class="message-group">
+        <div class="message">Is this a commercial vehicle?</div>
+        <div class="message">Is this a commercial vehicle?</div>
+        <div class="message-user">No</div>
+      </div>
+      <div class="message-group">
+        <div class="message">Do you have insurance? If yes, please provide your insurance details</div>
+        <button class="upload-button">Upload</button>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a1432c5a5e811fd50a635511e1db63019060b7ab515712cc590c5290fa939ce3?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Upload icon" class="upload-icon">
+        <div class="message-user">Yes</div>
+        <div class="file-preview">insurance.pdf</div>
+      </div>
+      <div class="message-group">
+        <div class="message">That's it! Now you'll be forwarded to Kriti</div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="separator">
+        <p class="chat-info">Report has been generated</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="separator">
+        <p class="chat-info">Ms. Kriti S.</p>
+        <div class="message">Hey! I've looked at your details and I can certainly help you out.</div>
+        <div class="message">My current going rate for cases like this is Rs. 10000</div>
+        <div class="file-preview">Report.pdf</div>
+        <button class="action-button">Accept: ₹10,000</button>
+        <p class="quick-actions-label">Quick Actions</p>
+      </div>
+      <div class="predictive-responses">
+        <div class="response-bubble">Yes</div>
+        <div class="response-bubble">No</div>
+      </div>
+      <div class="input-area">
+        <div class="input-icon">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e02dbf82f46377e4ff6708fb3bfcc3432b0e6adc9c04e9813072789e3b511e2?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Input icon" class="img-10">
+        </div>
+        <div class="input-field">
+          <div class="input-indicator"></div>
+          <label for="chatInput" class="visually-hidden">Ask an Eagle</label>
+          <input type="text" id="chatInput" placeholder="Ask an Eagle" aria-label="Ask an Eagle">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/60af95b45f3a5527507404c3c97c0c2bf106091c55afe14db1ddd8d514ce589d?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Send message" class="img-11">
+        </div>
+      </div>
+    </section>
