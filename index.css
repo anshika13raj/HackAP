@@ -83,6 +83,7 @@ body {
 
 .cta-button {
   width: 100%;
+  text-decoration: none;
   border-radius: 12px;
   margin-top: 20px;
   font-size: 15px;
