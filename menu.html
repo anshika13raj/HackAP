@@ -1,289 +1,307 @@
 <style>
-    .menu-container {
-      transform: rotate(1.387778863499512e-17rad);
-      border-radius: 40px;
-      background-color: #fcfcfc;
-      display: flex;
-      max-width: 480px;
-      width: 100%;
-      overflow: hidden;
-      margin: 0 auto;
-    
-    }
-    
-    .sidebar {
-      border-radius: 0 10px 10px 0;
-      background-color: #ea9a2f;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      flex-grow: 1;
-      flex-basis: 0;
-      width: fit-content;
-      padding: 43px 56px 43px 26px;
-    }
-    
-    .sidebar-icon {
-      aspect-ratio: 1.04;
-      object-fit: contain;
-      object-position: center;
-      width: 23px;
-    }
-    
-    .sidebar-item {
-      display: flex;
-      margin-top: 14px;
-      gap: 9px;
-      color: #000;
-      white-space: nowrap;
-      font: 400 24px Poppins, sans-serif;
-    }
-    
-    .sidebar-item-icon {
-      aspect-ratio: 0.92;
-      object-fit: contain;
-      object-position: center;
-      width: 49px;
-    }
-    
-    .sidebar-item-text {
-      transform: rotate(-1.387777788164829e-17rad);
-      align-self: flex-start;
-      margin-top: 25px;
-      margin-left: 50px;
-      flex-basis: auto;
-    }
-    
-    .profile-item {
-      display: flex;
-      margin-top: 20px;
-      align-items: flex-start;
-      gap: 22px;
-    }
-    
-    .profile-icon-wrapper {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      aspect-ratio: 1;
-      margin-top: 4px;
-      width: 32px;
-      overflow: hidden;
-    }
-    
-    .profile-icon-bg {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-    
-    .profile-icon {
-      aspect-ratio: 1;
-      object-fit: contain;
-      object-position: center;
-      width: 100%;
-    }
-    
-    .bottom-icon {
-      aspect-ratio: 1;
-      object-fit: contain;
-      object-position: center;
-      width: 30px;
-      margin: 360px 0 0 10px;
-    }
-    
-    .main-content {
-      align-self: flex-start;
-      display: flex;
-      margin-top: 28px;
-      flex-direction: column;
-      font-family: Poppins, sans-serif;
-      font-weight: 500;
-      flex-grow: 1;
-      flex-basis: 0;
-      width: fit-content;
-    }
-    
-    .content-wrapper {
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-      margin-right: 20px;
-      padding: 10px 5px;
-    
-      ;
-    }
-    
-    .step-indicator {
-      transform: rotate(-1.3877784499092401e-17rad);
-      align-self: flex-end;
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      font-size: 13px;
-      color: #fff;
-      white-space: nowrap;
-      text-align: center;
-      letter-spacing: -0.05px;
-      justify-content: center;
-    }
-    
-    .step {
-      align-self: stretch;
-      display: flex;
-      flex-direction: column;
-      color: #000;
-      width: 30px;
-      margin: auto 0;
-    }
-    
-    .step-active {
-      background-color: #fdb453;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      padding: 0 3px;
-    }
-    
-    .step-inactive {
-      background-color: #807c7c;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      padding: 0 3px;
-    }
-    
-    .step-separator {
-      aspect-ratio: 5.99;
-      object-fit: contain;
-      object-position: center;
-      width: 12px;
-      align-self: stretch;
-      margin: auto 0;
-    }
-    
-    .input-prompt {
-      color: #b0b0b0;
-      font-size: 17px;
-      letter-spacing: -0.65px;
-      align-self: flex-start;
-      margin-top: 389px;
-    }
-    
-    .predictive-responses {
-      transform: rotate(-1.3877780363189831e-17rad);
-      background-color: rgba(168, 185, 227, 0);
-      display: flex;
-      margin-top: 181px;
-      height: 60px;
-      width: 100%;
-      padding-top: 16px;
-      align-items: flex-start;
-      gap: 8px;
-      color: #1d192b;
-      letter-spacing: 0.5px;
-      justify-content: flex-end;
-      font: 400 16px/24px Roboto, sans-serif;
-    }
-    
-    .bubble {
-      align-self: stretch;
-      border-radius: 20px;
-      background-color: #fdb453;
-      min-height: 44px;
-      padding: 8px 16px;
-    }
-    
-    .bubble-alt {
-      align-self: stretch;
-      border-radius: 20px 20px 8px 20px;
-      background-color: #fdb453;
-      min-height: 44px;
-      padding: 8px 0 8px 16px;
-    }
-    
-    .action-button {
-      border-radius: 0px;
-      background-color: #e9e7e7;
-      /* align-self: flex-end; */
-      margin-top: 20px;
-      margin-left: -100px;
-      width: 150px;
-      max-width: 75%;
-      font-size: 17px;
-      color: #080000;
-      letter-spacing: -0.65px;
-      padding: 10px 16px; */
-    }
+  .menu-container {
+    transform: rotate(1.387778863499512e-17rad);
+    border-radius: 40px;
+    background-color: #fcfcfc;
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
 
-    .back-back{
-        margin-top: 50px;
-    }
-    
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-    </style>
-    
-    <nav class="menu-container">
-      <div class="sidebar">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e325f34c264a1088ec7f9f771d9eeab8d4bbbc58312b5dce4900255baf065e94?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="sidebar-icon" />
-        <div class="sidebar-item">
-          <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e70228d0ac5a878da1650956484fad93536fd4c4bd20452a1176be62dfb1ee2?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Languages icon" class="sidebar-item-icon" /> -->
-          <div class="sidebar-item-text">Languages</div>
-        </div>
-        <div class="sidebar-item">
-            <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e70228d0ac5a878da1650956484fad93536fd4c4bd20452a1176be62dfb1ee2?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Languages icon" class="sidebar-item-icon" /> -->
-            <div class="sidebar-item-text">Profile</div>
-          </div>
-        <!-- <div class="profile-item">
+  }
+
+  .sidebar {
+    border-radius: 0 10px 10px 0;
+    background-color: #ea9a2f;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: fit-content;
+    padding: 43px 56px 43px 26px;
+  }
+
+  .sidebar-icon {
+    aspect-ratio: 1.04;
+    object-fit: contain;
+    object-position: center;
+    width: 23px;
+  }
+
+  .sidebar-item {
+    display: flex;
+    margin-top: 14px;
+    gap: 9px;
+    color: #000;
+    white-space: nowrap;
+    font: 400 24px Poppins, sans-serif;
+  }
+
+  .sidebar-item-icon {
+    aspect-ratio: 0.92;
+    object-fit: contain;
+    object-position: center;
+    width: 49px;
+  }
+
+  .sidebar-item-text {
+    transform: rotate(-1.387777788164829e-17rad);
+    align-self: flex-start;
+    margin-top: 25px;
+    margin-left: 50px;
+    flex-basis: auto;
+  }
+
+  .profile-item {
+    display: flex;
+    margin-top: 20px;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .profile-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    aspect-ratio: 1;
+    margin-top: 4px;
+    width: 32px;
+    overflow: hidden;
+  }
+
+  .profile-icon-bg {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .profile-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+
+  .bottom-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 30px;
+    margin: 360px 0 0 10px;
+  }
+
+  .main-content {
+    align-self: flex-start;
+    display: flex;
+    margin-top: 28px;
+    flex-direction: column;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: fit-content;
+  }
+
+  .content-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-right: 20px;
+    padding: 10px 5px;
+
+    ;
+  }
+
+  .step-indicator {
+    transform: rotate(-1.3877784499092401e-17rad);
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 13px;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    letter-spacing: -0.05px;
+    justify-content: center;
+  }
+
+  .step {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    width: 30px;
+    margin: auto 0;
+  }
+
+  .step-active {
+    background-color: #fdb453;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0 3px;
+  }
+
+  .step-inactive {
+    background-color: #807c7c;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0 3px;
+  }
+
+  .step-separator {
+    aspect-ratio: 5.99;
+    object-fit: contain;
+    object-position: center;
+    width: 12px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+
+  .input-prompt {
+    color: #b0b0b0;
+    font-size: 17px;
+    letter-spacing: -0.65px;
+    align-self: flex-start;
+    margin-top: 389px;
+  }
+
+  .predictive-responses {
+    transform: rotate(-1.3877780363189831e-17rad);
+    background-color: rgba(168, 185, 227, 0);
+    display: flex;
+    margin-top: 181px;
+    height: 60px;
+    width: 100%;
+    padding-top: 16px;
+    align-items: flex-start;
+    gap: 8px;
+    color: #1d192b;
+    letter-spacing: 0.5px;
+    justify-content: flex-end;
+    font: 400 16px/24px Roboto, sans-serif;
+  }
+
+  .bubble {
+    align-self: stretch;
+    border-radius: 20px;
+    background-color: #fdb453;
+    min-height: 44px;
+    padding: 8px 16px;
+  }
+
+  .bubble-alt {
+    align-self: stretch;
+    border-radius: 20px 20px 8px 20px;
+    background-color: #fdb453;
+    min-height: 44px;
+    padding: 8px 0 8px 16px;
+  }
+
+  .action-button {
+    border-radius: 0px;
+    background-color: #e9e7e7;
+    /* align-self: flex-end; */
+    margin-top: 20px;
+    margin-left: -100px;
+    width: 150px;
+    max-width: 75%;
+    font-size: 17px;
+    color: #080000;
+    letter-spacing: -0.65px;
+    padding: 10px 16px; */
+  }
+
+  .back-back{
+      margin-top: 50px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<nav class="menu-container">
+  <div class="sidebar">
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e325f34c264a1088ec7f9f771d9eeab8d4bbbc58312b5dce4900255baf065e94?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144"
+      alt=""
+      class="sidebar-icon"
+    />
+    <div class="sidebar-item">
+      <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e70228d0ac5a878da1650956484fad93536fd4c4bd20452a1176be62dfb1ee2?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Languages icon" class="sidebar-item-icon" /> -->
+      <div class="sidebar-item-text">Languages</div>
+    </div>
+    <div class="sidebar-item">
+      <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e70228d0ac5a878da1650956484fad93536fd4c4bd20452a1176be62dfb1ee2?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Languages icon" class="sidebar-item-icon" /> -->
+      <div class="sidebar-item-text">Profile</div>
+    </div>
+    <!-- <div class="profile-item">
           <div class="profile-icon-wrapper">
             <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4f6678916dfe4775f1006fd98777a997bcc38d6d7081a69e3044f0194f48538b?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="profile-icon-bg" />
           </div>
           <div class="sidebar-item-text">Profile</div>
         </div> -->
-        <div class="sidebar-item">
-          <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0bfedf7e38fb0840867fa67abc5fe3a13389613e187700553977e9e6ec58aa15?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Updates icon" class="sidebar-item-icon" /> -->
-          <div class="sidebar-item-text">Updates</div>
-        </div>
-        <div class="sidebar-item">
-          <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4d00f8aea824fff41defe5af2b829b80d4c8eea5c4b247baa9c2c202325769ba?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Messages icon" class="sidebar-item-icon" /> -->
-          <div class="sidebar-item-text">Messages</div>
-        </div>
-        <div class="sidebar-item">
-          <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b44fb2127cfacc8bca855327312dc22867045018ab7aa86e2194e13e911b9159?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Help icon" class="sidebar-item-icon" /> -->
-          <div class="sidebar-item-text">Help</div>
-        </div>
-        <div class="back-back">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b18c71ed59f6851550a206a51a86efccf0f2182eca46f6809420ccca5bba5bc5?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="bottom-icon" />
-      </div></div>
-      <main class="main-content">
-        <div class="content-wrapper">
-          <div class="step-indicator">
-            <div class="step"><div class="step-active">1</div></div>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="step-separator" />
-            <div class="step"><div class="step-inactive">2</div></div>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="" class="step-separator" />
-            <div class="step"><div class="step-inactive">3</div></div>
-          </div>
-          <!-- <label for="issueInput" class="visually-hidden">Type or state your issue</label> -->
-          <!-- <input type="text" id="issueInput" class="input-prompt" placeholder="Type or state your issue" /> -->
-        </div>
-        <div class="predictive-responses">
-          <!-- <div class="bubble">Request Lawyers nearby</div>
+    <div class="sidebar-item">
+      <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0bfedf7e38fb0840867fa67abc5fe3a13389613e187700553977e9e6ec58aa15?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Updates icon" class="sidebar-item-icon" /> -->
+      <div class="sidebar-item-text">Updates</div>
+    </div>
+    <div class="sidebar-item">
+      <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4d00f8aea824fff41defe5af2b829b80d4c8eea5c4b247baa9c2c202325769ba?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Messages icon" class="sidebar-item-icon" /> -->
+      <div class="sidebar-item-text">Messages</div>
+    </div>
+    <div class="sidebar-item">
+      <!-- <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b44fb2127cfacc8bca855327312dc22867045018ab7aa86e2194e13e911b9159?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144" alt="Help icon" class="sidebar-item-icon" /> -->
+      <div class="sidebar-item-text">Help</div>
+    </div>
+    <div class="back-back">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/b18c71ed59f6851550a206a51a86efccf0f2182eca46f6809420ccca5bba5bc5?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144"
+        alt=""
+        class="bottom-icon"
+      />
+    </div>
+  </div>
+  <main class="main-content">
+    <div class="content-wrapper">
+      <div class="step-indicator">
+        <div class="step"><div class="step-active">1</div></div>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144"
+          alt=""
+          class="step-separator"
+        />
+        <div class="step"><div class="step-inactive">2</div></div>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144"
+          alt=""
+          class="step-separator"
+        />
+        <div class="step"><div class="step-inactive">3</div></div>
+      </div>
+      <!-- <label for="issueInput" class="visually-hidden">Type or state your issue</label> -->
+      <!-- <input type="text" id="issueInput" class="input-prompt" placeholder="Type or state your issue" /> -->
+    </div>
+    <div class="predictive-responses">
+      <!-- <div class="bubble">Request Lawyers nearby</div>
           <div class="bubble-alt">get minor legal advice</div> -->
-        </div>
-        <!-- <button class="action-button">Talk to an eagle</button> -->
-      </main>
-    </nav>
+    </div>
+    <!-- <button class="action-button">Talk to an eagle</button> -->
+  </main>
+      
+</nav>

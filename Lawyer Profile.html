@@ -1,17 +1,58 @@
 <style>
-  body{
-    zoom:230%;
+  body {
+    zoom: 230%;
   }
-  .lawyer-profile { border-radius: 30px; background-color: #fcfcfc; display: flex; max-width: 480px; width: 100%; flex-direction: column; overflow: hidden; margin: 0 auto; }
-  .profile-header { display: flex; flex-direction: column; position: relative; aspect-ratio: 1.022; width: 100%; align-items: start; gap: 20px; justify-content: space-between; padding: 15px 16px 308px; }
-  .profile-image { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; object-position: center; }
-  .close-button { position: relative; border-radius: 20px; background-color: rgba(196, 196, 196, 0.4); display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0 17px; }
-  .close-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 10px; }
+  .lawyer-profile {
+    border-radius: 30px;
+    background-color: #fcfcfc;
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    aspect-ratio: 1.022;
+    width: 100%;
+    align-items: start;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 15px 16px 308px;
+  }
+  .profile-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .close-button {
+    position: relative;
+    border-radius: 20px;
+    background-color: rgba(196, 196, 196, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0 17px;
+  }
+  .close-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 10px;
+  }
   /* .verification-badge { position: relative; border-radius: 20px; background-color: #49ad1b; display: flex; align-items: center; color: #f7f7f8; white-space: nowrap; letter-spacing: 0.05px; padding: 12px; font: 700 13px Poppins, sans-serif; } */
   .verification-badge {
-    position: absolute;  /* Use 'fixed' to position relative to the viewport */
-    top: 20;           /* Align to the top of the screen */
-    right: 40;         /* Align to the right of the screen */
+    position: absolute; /* Use 'fixed' to position relative to the viewport */
+    top: 20; /* Align to the top of the screen */
+    right: 40; /* Align to the right of the screen */
     border-radius: 20px;
     background-color: #49ad1b;
     display: flex;
@@ -21,26 +62,122 @@
     letter-spacing: 0.05px;
     padding: 12px;
     font: 700 13px Poppins, sans-serif;
-    margin: 10px;     /* Optional: Add some margin to prevent it from touching the edges */
-}
+    margin: 10px; /* Optional: Add some margin to prevent it from touching the edges */
+  }
 
-  .badge-content { display: flex; width: 77px; gap: 4px; }
-  .badge-text { flex-grow: 1; }
-  .badge-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 20px; }
-  .profile-details { border-radius: 24px; background-color: #fbfbfb; z-index: 10; display: flex; margin-top: -24px; width: 100%; flex-direction: column; font-family: Poppins, sans-serif; padding: 19px 15px 35px; }
-  .lawyer-name { color: #2b2b2b; font-size: 28px; font-weight: 700; letter-spacing: -0.11px; align-self: center; }
-  .lawyer-stats { align-self: center; display: flex; margin-top: 25px; width: 100%; max-width: 279px; gap: 10px; font-size: 13px; color: #a1a1a1; font-weight: 500; letter-spacing: -0.05px; }
-  .hourly-rate { flex-grow: 1; }
-  .stat-divider { aspect-ratio: 0.07; object-fit: contain; object-position: center; width: 1px; margin: auto 0; }
-  .distance { align-self: start; }
-  .rating { display: flex; align-items: center; gap: 2px; color: #2b2b2b; white-space: nowrap; justify-content: end; }
-  .rating-score { align-self: stretch; margin: auto 0; }
-  .rating-star { aspect-ratio: 1; object-fit: contain; object-position: center; width: 13px; align-self: stretch; margin: auto 0; }
-  .cases-handled { align-self: start; }
-  .section-divider { aspect-ratio: 166.67; object-fit: contain; object-position: center; width: 100%; margin-top: 24px; }
-  .profile-nav { display: flex; margin-top: 27px; width: 100%; gap: 8px; font-size: 13px; white-space: nowrap; letter-spacing: -0.05px;justify-content: center; }
-  .nav-item-active { align-self: stretch; border-radius: 14px; background-color: #2b2b2b; color: #f7f7f8; font-weight: 700; padding: 12px 29px; }
-  .nav-item { align-self: stretch; border-radius: 14px; background-color: #f5f5f5; color: #b0b0b0; font-weight: 500; padding: 12px 22px; }
+  .badge-content {
+    display: flex;
+    width: 77px;
+    gap: 4px;
+  }
+  .badge-text {
+    flex-grow: 1;
+  }
+  .badge-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 20px;
+  }
+  .profile-details {
+    border-radius: 24px;
+    background-color: #fbfbfb;
+    z-index: 10;
+    display: flex;
+    margin-top: -24px;
+    width: 100%;
+    flex-direction: column;
+    font-family: Poppins, sans-serif;
+    padding: 19px 15px 35px;
+  }
+  .lawyer-name {
+    color: #2b2b2b;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.11px;
+    align-self: center;
+  }
+  .lawyer-stats {
+    align-self: center;
+    display: flex;
+    margin-top: 25px;
+    width: 100%;
+    max-width: 279px;
+    gap: 10px;
+    font-size: 13px;
+    color: #a1a1a1;
+    font-weight: 500;
+    letter-spacing: -0.05px;
+  }
+  .hourly-rate {
+    flex-grow: 1;
+  }
+  .stat-divider {
+    aspect-ratio: 0.07;
+    object-fit: contain;
+    object-position: center;
+    width: 1px;
+    margin: auto 0;
+  }
+  .distance {
+    align-self: start;
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #2b2b2b;
+    white-space: nowrap;
+    justify-content: end;
+  }
+  .rating-score {
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .rating-star {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 13px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .cases-handled {
+    align-self: start;
+  }
+  .section-divider {
+    aspect-ratio: 166.67;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .profile-nav {
+    display: flex;
+    margin-top: 27px;
+    width: 100%;
+    gap: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    letter-spacing: -0.05px;
+    justify-content: center;
+  }
+  .nav-item-active {
+    align-self: stretch;
+    border-radius: 14px;
+    background-color: #2b2b2b;
+    color: #f7f7f8;
+    font-weight: 700;
+    padding: 12px 29px;
+  }
+  .nav-item {
+    align-self: stretch;
+    border-radius: 14px;
+    background-color: #f5f5f5;
+    color: #b0b0b0;
+    font-weight: 500;
+    padding: 12px 22px;
+  }
   /* .lawyer-info { align-self: start; display: flex; margin-top: 22px; gap: 40px 49px; font-weight: 500; } */
   .lawyer-info {
     display: flex;
@@ -48,13 +185,26 @@
     gap: 40px 49px;
     font-weight: 500;
     justify-content: center; /* Centers the child elements inside the container */
-    margin-left: auto;  /* Centers the container on the screen */
+    margin-left: auto; /* Centers the container on the screen */
     margin-right: auto; /* Centers the container on the screen */
-}
+  }
 
-  .info-group { display: flex; flex-direction: column; justify-content: center; }
-  .info-label { color: #b0b0b0; font-size: 13px; letter-spacing: -0.05px;justify-content: center; }
-  .info-value { color: #2b2b2b; font-size: 17px; letter-spacing: -0.07px; }
+  .info-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .info-label {
+    color: #b0b0b0;
+    font-size: 13px;
+    letter-spacing: -0.05px;
+    justify-content: center;
+  }
+  .info-value {
+    color: #2b2b2b;
+    font-size: 17px;
+    letter-spacing: -0.07px;
+  }
   /* .lawyer-description { display: flex; margin-top: 22px; width: 100%; max-width: 279px; flex-direction: column; font-size: 13px; font-weight: 500; letter-spacing: -0.05px; justify-content: center; } */
   .lawyer-description {
     display: flex;
@@ -67,73 +217,152 @@
     letter-spacing: -0.05px;
     justify-content: center;
     align-items: center; /* Center the text horizontally inside the container */
-    margin-left: auto;   /* Center the container itself on the screen */
-    margin-right: auto;  /* Center the container itself on the screen */
-    text-align: center;  /* Align text inside the container to the center */
-}
+    margin-left: auto; /* Center the container itself on the screen */
+    margin-right: auto; /* Center the container itself on the screen */
+    text-align: center; /* Align text inside the container to the center */
+  }
 
-  .description-text { color: #b0b0b0; justify-content: center;}
-  .read-more { color: #fb724c; border: none; }
-  .cta-button { border-radius: 14px; background-color: #fdb453; align-self: center; display: flex; margin-top: 24px; align-items: center; gap: 10px; font-size: 17px; color: #000; font-weight: 700; white-space: nowrap; text-align: center; letter-spacing: -0.07px; justify-content: center; padding: 15px 102px; }
-  .button-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 24px; align-self: stretch; margin: auto 0; }
-  .button-text { align-self: stretch; margin: auto 0; }
-  </style>
-  
-  <section class="lawyer-profile">
-    <header class="profile-header">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4dffb17ba0a7ef3004dfbe7f670c21a5bab501e763f28aecbb50b86f9cf01ddf?apiKey=4869a4e6232b4b9487580cafdb5f9fce&" alt="Lawyer profile picture" class="profile-image" />
-      <button class="close-button" aria-label="Close profile">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/64d9bcec17392613418a8449f89383c38341340c1f11ebc7eeb26ad4d87e67d5?apiKey=4869a4e6232b4b9487580cafdb5f9fce&" alt="" class="close-icon" />
-      </button>
-      <div class="verification-badge">
-        <div class="badge-content">
-          <span class="badge-text">Verified</span>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b7f28fe815836711a1285df52d9123d3cd7d5cad009c0578f3ed17f1e31752e?apiKey=4869a4e6232b4b9487580cafdb5f9fce&" alt="" class="badge-icon" />
-        </div>
+  .description-text {
+    color: #b0b0b0;
+    justify-content: center;
+  }
+  .read-more {
+    color: #fb724c;
+    border: none;
+  }
+  .cta-button {
+    border-radius: 14px;
+    background-color: #fdb453;
+    align-self: center;
+    display: flex;
+    margin-top: 24px;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+    color: #000;
+    font-weight: 700;
+    white-space: nowrap;
+    text-align: center;
+    letter-spacing: -0.07px;
+    justify-content: center;
+    padding: 15px 102px;
+  }
+  .button-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 24px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  .button-text {
+    align-self: stretch;
+    margin: auto 0;
+  }
+</style>
+
+<section class="lawyer-profile">
+  <header class="profile-header">
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/4dffb17ba0a7ef3004dfbe7f670c21a5bab501e763f28aecbb50b86f9cf01ddf?apiKey=4869a4e6232b4b9487580cafdb5f9fce&"
+      alt="Lawyer profile picture"
+      class="profile-image"
+    />
+    <button class="close-button" aria-label="Close profile">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/64d9bcec17392613418a8449f89383c38341340c1f11ebc7eeb26ad4d87e67d5?apiKey=4869a4e6232b4b9487580cafdb5f9fce&"
+        alt=""
+        class="close-icon"
+      />
+    </button>
+    <div class="verification-badge">
+      <div class="badge-content">
+        <span class="badge-text">Verified</span>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b7f28fe815836711a1285df52d9123d3cd7d5cad009c0578f3ed17f1e31752e?apiKey=4869a4e6232b4b9487580cafdb5f9fce&"
+          alt=""
+          class="badge-icon"
+        />
       </div>
-    </header>
-    
-    <main class="profile-details">
-      <h1 class="lawyer-name">Kriti S. Advocate</h1>
-      <div class="lawyer-stats">
-        <span class="hourly-rate"><span class="rate-value">Rs.2500</span> / <span class="rate-unit">hr</span></span>
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eabdc162a008da612c18bbd286fec195932dc8c3a558283cf49c9003201e790b?apiKey=4869a4e6232b4b9487580cafdb5f9fce&" alt="" class="stat-divider" />
-        <span class="distance"><span class="distance-value">10</span> <span class="distance-unit">km</span></span>
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eabdc162a008da612c18bbd286fec195932dc8c3a558283cf49c9003201e790b?apiKey=4869a4e6232b4b9487580cafdb5f9fce&" alt="" class="stat-divider" />
-        <div class="rating">
-          <span class="rating-score">4.4</span>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e07b7cfe029cefb6b982c8d1b20d957ae7c2749b044772ace56e6272e39a088?apiKey=4869a4e6232b4b9487580cafdb5f9fce&" alt="Star rating" class="rating-star" />
-        </div>
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eabdc162a008da612c18bbd286fec195932dc8c3a558283cf49c9003201e790b?apiKey=4869a4e6232b4b9487580cafdb5f9fce&" alt="" class="stat-divider" />
-        <span class="cases-handled"><span class="cases-value">250</span> cases</span>
+    </div>
+  </header>
+
+  <main class="profile-details">
+    <h1 class="lawyer-name">Kriti S. Advocate</h1>
+    <div class="lawyer-stats">
+      <span class="hourly-rate"
+        ><span class="rate-value">Rs.2500</span> /
+        <span class="rate-unit">hr</span></span
+      >
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/eabdc162a008da612c18bbd286fec195932dc8c3a558283cf49c9003201e790b?apiKey=4869a4e6232b4b9487580cafdb5f9fce&"
+        alt=""
+        class="stat-divider"
+      />
+      <span class="distance"
+        ><span class="distance-value">10</span>
+        <span class="distance-unit">km</span></span
+      >
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/eabdc162a008da612c18bbd286fec195932dc8c3a558283cf49c9003201e790b?apiKey=4869a4e6232b4b9487580cafdb5f9fce&"
+        alt=""
+        class="stat-divider"
+      />
+      <div class="rating">
+        <span class="rating-score">4.4</span>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e07b7cfe029cefb6b982c8d1b20d957ae7c2749b044772ace56e6272e39a088?apiKey=4869a4e6232b4b9487580cafdb5f9fce&"
+          alt="Star rating"
+          class="rating-star"
+        />
       </div>
-      
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?apiKey=4869a4e6232b4b9487580cafdb5f9fce&" alt="" class="section-divider" />
-      
-      <nav class="profile-nav">
-        <a href="#about" class="nav-item-active">About</a>
-        <a href="#location" class="nav-item">Location</a>
-      </nav>
-      
-      <div class="lawyer-info">
-        <div class="info-group">
-          <span class="info-label">Age</span>
-          <span class="info-value">30 years</span>
-        </div>
-        <div class="info-group">
-          <span class="info-label">Experience</span>
-          <span class="info-value">5+ years</span>
-        </div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/eabdc162a008da612c18bbd286fec195932dc8c3a558283cf49c9003201e790b?apiKey=4869a4e6232b4b9487580cafdb5f9fce&"
+        alt=""
+        class="stat-divider"
+      />
+      <span class="cases-handled"
+        ><span class="cases-value">250</span> cases</span
+      >
+    </div>
+
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?apiKey=4869a4e6232b4b9487580cafdb5f9fce&"
+      alt=""
+      class="section-divider"
+    />
+
+    <nav class="profile-nav">
+      <a href="#about" class="nav-item-active">About</a>
+      <a href="#location" class="nav-item">Location</a>
+    </nav>
+
+    <div class="lawyer-info">
+      <div class="info-group">
+        <span class="info-label">Age</span>
+        <span class="info-value">30 years</span>
       </div>
-      
-      <div class="lawyer-description">
-        <p class="description-text">Ms. Kirti Singh is an experienced lawyer in the field of insurance. She has a success rate of more that 88%.</p>
-        <button class="read-more">Read more</button>
+      <div class="info-group">
+        <span class="info-label">Experience</span>
+        <span class="info-value">5+ years</span>
       </div>
-      
-      <button class="cta-button">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e1474b069742c7e3def060ebbeb672d0dca318a94e8801923eb1512bd0a8314f?apiKey=4869a4e6232b4b9487580cafdb5f9fce&" alt="" class="button-icon" />
-        <span class="button-text">Continue</span>
-      </button>
-    </main>
-  </section>
+    </div>
+
+    <div class="lawyer-description">
+      <p class="description-text">
+        Ms. Kirti Singh is an experienced lawyer in the field of insurance. She
+        has a success rate of more that 88%.
+      </p>
+      <button class="read-more">Read more</button>
+    </div>
+
+    <button class="cta-button">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/e1474b069742c7e3def060ebbeb672d0dca318a94e8801923eb1512bd0a8314f?apiKey=4869a4e6232b4b9487580cafdb5f9fce&"
+        alt=""
+        class="button-icon"
+      />
+      <span class="button-text">Continue</span>
+    </button>
+  </main>
+</section>

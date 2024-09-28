@@ -1,240 +1,288 @@
 <style>
-    .profile-container { 
-        background-color: #fcfcfc; 
-        max-width: 412px; 
-        width: 100%;
-        max-height: 915px; 
-        margin: 0; 
-        font: 500 13px Poppins, sans-serif; 
-        letter-spacing: -0.05px; 
-        overflow: hidden;
-        height:100%;
-        zoom:270%;
-    }
+  .profile-container {
+    background-color: #fcfcfc;
+    max-width: 412px;
+    width: 100%;
+    max-height: 915px;
+    margin: 0;
+    font: 500 13px Poppins, sans-serif;
+    letter-spacing: -0.05px;
+    overflow: hidden;
+    height: 100%;
+    zoom: 270%;
+  }
 
-    .profile-content { 
-        background-color: #fbfbfb; 
-        width: 412px; 
-        padding: 21px 0 35px 16px; 
-    }
+  .profile-content {
+    background-color: #fbfbfb;
+    width: 412px;
+    padding: 21px 0 35px 16px;
+  }
 
-    .case-numbering { 
-        display: flex;  
-        align-self: flex-end; 
-        align-items: right; 
-        gap: 5px; 
-        color: #fff; 
-        white-space: nowrap; 
-        text-align: center; 
-        margin-left:53%
-    }
+  .case-numbering {
+    display: flex;
+    align-self: flex-end;
+    align-items: right;
+    gap: 5px;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    margin-left: 53%;
+  }
 
-    .case-number { 
-        border-radius: 50%; 
-        width: 30px; 
-        height: 30px; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-    }
+  .case-number {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .case-number-active { background-color: #fdb453; }
+  .case-number-active {
+    background-color: #fdb453;
+  }
 
-    .case-number-inactive { background-color: #807c7c; }
+  .case-number-inactive {
+    background-color: #807c7c;
+  }
 
-    .case-number-separator { width: 12px; }
-    
-    .lawyer-name { 
-        color: #2b2b2b; 
-        font-size: 28px; 
-        font-weight: 700; 
-        letter-spacing: -0.11px; 
-        margin-top: 10px; 
-    }
+  .case-number-separator {
+    width: 12px;
+  }
 
-    .lawyer-details { 
-        display: flex; 
-        margin-top: 20px; 
-        width: 100%; 
-        max-width: 279px; 
-        gap: 10px; 
-        color: #a1a1a1; 
-    }
+  .lawyer-name {
+    color: #2b2b2b;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.11px;
+    margin-top: 10px;
+  }
 
-    .detail-item { 
-        display: flex; 
-        align-items: center; 
-    }
+  .lawyer-details {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 279px;
+    gap: 10px;
+    color: #a1a1a1;
+  }
 
-    .detail-separator { 
-        width: 1px; 
-        height: 100%; 
-        background-color: #a1a1a1; 
-    }
+  .detail-item {
+    display: flex;
+    align-items: center;
+  }
 
-    .rating { 
-        display: flex; 
-        align-items: center; 
-        gap: 2px; color: #2b2b2b; 
-    }
+  .detail-separator {
+    width: 1px;
+    height: 100%;
+    background-color: #a1a1a1;
+  }
 
-    .rating-star { 
-        width: 13px; 
-        height: 13px; 
-    }
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #2b2b2b;
+  }
 
-    .profile-divider { 
-        width: 100%; 
-        height: 1px; 
-        background-color: #bababa; 
-        margin-top: 24px; 
-    }
+  .rating-star {
+    width: 13px;
+    height: 13px;
+  }
 
-    .input-field { 
-        align-items: center; 
-        border-radius: 10px; 
-        border: 1px solid #bababa; 
-        background-color: #fff; 
-        display: flex; 
-        margin-top: 18px; 
-        min-height: 50px; 
-        width: 100%; 
-        max-width: 326px; 
-        gap: 12px; 
-        font-size: 14px; 
-        color: #bababa; 
-        font-weight: 400;   
-        letter-spacing: 0.2px; 
-        padding: 0 15px; 
-    }
+  .profile-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #bababa;
+    margin-top: 24px;
+  }
 
-    .input-icon { 
-        width: 20px; 
-        height: 20px;
-    }
+  .input-field {
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #bababa;
+    background-color: #fff;
+    display: flex;
+    margin-top: 18px;
+    min-height: 50px;
+    width: 100%;
+    max-width: 326px;
+    gap: 12px;
+    font-size: 14px;
+    color: #bababa;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    padding: 0 15px;
+  }
 
-    .input-icons { 
-        width: 20px; 
-        height: 20px;
-        padding-top: 320px;
-    }
+  .input-icon {
+    width: 20px;
+    height: 20px;
+  }
 
-    .input-placeholder { 
-        border:none;
-        height:45px;
-        margin:auto;
-        width:320px;
-    }
+  .input-icons {
+    width: 20px;
+    height: 20px;
+    padding-top: 320px;
+  }
 
-    .case-details-label { 
-        margin-top: 18px;
-        width: 100%; 
-        max-width: 338px; 
-        color: #b0b0b0; 
-        text-align: bottom;
-        display: block; 
-    }
+  .input-placeholder {
+    border: none;
+    height: 45px;
+    margin: auto;
+    width: 320px;
+  }
 
-    .case-details-input { 
-        min-height: 352px; 
-        padding: 15px;
-        width:fill; 
-    }
+  .case-details-label {
+    margin-top: 18px;
+    width: 100%;
+    max-width: 338px;
+    color: #b0b0b0;
+    text-align: bottom;
+    display: block;
+  }
 
-    .case-details-text { 
-        border: none;
-        color: #615f5f; 
-        line-height: 20px;
-        height:350px;
-        width: 100%;
+  .case-details-input {
+    min-height: 352px;
+    padding: 15px;
+    width: fill;
+  }
 
-    }
+  .case-details-text {
+    border: none;
+    color: #615f5f;
+    line-height: 20px;
+    height: 350px;
+    width: 100%;
+  }
 
-    .chat-button { 
-        border-radius: 14px;
-        border-color: #fdb453; 
-        background-color: #fdb453; 
-        display: flex; 
-        margin-top: 34px; 
-        width: 100%; 
-        max-width: 333px; 
-        align-items: center; 
-        justify-content: center; 
-        gap: 10px; 
-        font-size: 17px; 
-        color: #000; 
-        font-weight: 700; 
-        padding: 15px; 
-    }
+  .chat-button {
+    border-radius: 14px;
+    border-color: #fdb453;
+    background-color: #fdb453;
+    display: flex;
+    margin-top: 34px;
+    width: 100%;
+    max-width: 333px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 17px;
+    color: #000;
+    font-weight: 700;
+    padding: 15px;
+  }
 
-    .chat-icon { 
-        width: 24px; 
-        height: 24px; 
-    }
+  .chat-icon {
+    width: 24px;
+    height: 24px;
+  }
 
-    .visually-hidden { 
-        position: absolute; 
-        width: 1px; 
-        height: 1px; 
-        padding: 0; 
-        margin: -1px; 
-        overflow: hidden; 
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap; 
-        border: 0; 
-    }
-    </style>
-    
-    <section class="profile-container">
-      <div class="profile-content">
-        <div class="case-numbering">
-          <div class="case-number case-number-inactive">1</div>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce" alt="" class="case-number-separator" />
-          <div class="case-number case-number-active">2</div>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce" alt="" class="case-number-separator" />
-          <div class="case-number case-number-inactive">3</div>
-        </div>
-        <h1 class="lawyer-name">Ms. Kriti S.</h1>
-        <div class="lawyer-details">
-          <div class="detail-item">
-            <span>Rs.2500</span> / <span>hr</span>
-          </div>
-          <div class="detail-separator"></div>
-          <div class="detail-item">
-            <span>10</span> <span>km</span>
-          </div>
-          <div class="detail-separator"></div>
-          <div class="detail-item rating">
-            <span>4.4</span>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/698c64bfb81cf04c98bc4535760a49f20a883f84e1707a2e6179783937cb213b?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce" alt="Rating" class="rating-star" />
-          </div>
-          <div class="detail-separator"></div>
-          <div class="detail-item">
-            <span>250</span> cases
-          </div>
-        </div>
-        <div class="profile-divider"></div>
-        <form>
-          <div class="input-field">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce" alt="" class="input-icon" />
-            <label for="fullName" class="visually-hidden">Full Name</label>
-            <input type="text" id="fullName" class="input-placeholder" placeholder="Full Name" />
-          </div>
-          <div class="input-field">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b695fce7ef9d5b60e86ca80014e852dadcb71b09708ff24b54d9813647ef8280?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce" alt="" class="input-icon" />
-            <label for="phoneNumber" class="visually-hidden">Phone Number</label>
-            <input type="tel" id="phoneNumber" class="input-placeholder" placeholder="Phone Number" />
-          </div>
-          <label for="caseDetails" class="case-details-label">Give details about your case here</label>
-          <div class="input-field case-details-input">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c324aef6e07d28bf791d6781666b0d8e8b82c2e9cdb70d928986e196c5b271d2?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce" alt="" class="input-icons" />
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ead2a6890884867287a6310224cbfe39a0f67fd0e01cf08c659ec16a22440b81?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce" alt="" class="input-icons" />
-            <textarea id="caseDetails" class="case-details-text" placeholder="Truck has minor damage, light pole hit and bent, need to claim insurance"></textarea>
-          </div>
-          <button type="submit" class="chat-button">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e1474b069742c7e3def060ebbeb672d0dca318a94e8801923eb1512bd0a8314f?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce" alt="" class="chat-icon" />
-            Chat
-          </button>
-        </form>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<section class="profile-container">
+  <div class="profile-content">
+    <div class="case-numbering">
+      <div class="case-number case-number-inactive">1</div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce"
+        alt=""
+        class="case-number-separator"
+      />
+      <div class="case-number case-number-active">2</div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce"
+        alt=""
+        class="case-number-separator"
+      />
+      <div class="case-number case-number-inactive">3</div>
+    </div>
+    <h1 class="lawyer-name">Ms. Kriti S.</h1>
+    <div class="lawyer-details">
+      <div class="detail-item"><span>Rs.2500</span> / <span>hr</span></div>
+      <div class="detail-separator"></div>
+      <div class="detail-item"><span>10</span> <span>km</span></div>
+      <div class="detail-separator"></div>
+      <div class="detail-item rating">
+        <span>4.4</span>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/698c64bfb81cf04c98bc4535760a49f20a883f84e1707a2e6179783937cb213b?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce"
+          alt="Rating"
+          class="rating-star"
+        />
       </div>
-    </section>
+      <div class="detail-separator"></div>
+      <div class="detail-item"><span>250</span> cases</div>
+    </div>
+    <div class="profile-divider"></div>
+    <form>
+      <div class="input-field">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/28f534e3ed374e2c2bd132f8af2d15ccbca25153d5935469cf300890a09f6f00?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce"
+          alt=""
+          class="input-icon"
+        />
+        <label for="fullName" class="visually-hidden">Full Name</label>
+        <input
+          type="text"
+          id="fullName"
+          class="input-placeholder"
+          placeholder="Full Name"
+        />
+      </div>
+      <div class="input-field">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/b695fce7ef9d5b60e86ca80014e852dadcb71b09708ff24b54d9813647ef8280?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce"
+          alt=""
+          class="input-icon"
+        />
+        <label for="phoneNumber" class="visually-hidden">Phone Number</label>
+        <input
+          type="tel"
+          id="phoneNumber"
+          class="input-placeholder"
+          placeholder="Phone Number"
+        />
+      </div>
+      <label for="caseDetails" class="case-details-label"
+        >Give details about your case here</label
+      >
+      <div class="input-field case-details-input">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c324aef6e07d28bf791d6781666b0d8e8b82c2e9cdb70d928986e196c5b271d2?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce"
+          alt=""
+          class="input-icons"
+        />
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/ead2a6890884867287a6310224cbfe39a0f67fd0e01cf08c659ec16a22440b81?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce"
+          alt=""
+          class="input-icons"
+        />
+        <textarea
+          id="caseDetails"
+          class="case-details-text"
+          placeholder="Truck has minor damage, light pole hit and bent, need to claim insurance"
+        ></textarea>
+      </div>
+      <button type="submit" class="chat-button">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e1474b069742c7e3def060ebbeb672d0dca318a94e8801923eb1512bd0a8314f?placeholderIfAbsent=true&apiKey=4869a4e6232b4b9487580cafdb5f9fce"
+          alt=""
+          class="chat-icon"
+        />
+        Chat
+      </button>
+    </form>
+  </div>
+</section>
