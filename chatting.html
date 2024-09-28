@@ -5,7 +5,7 @@
     border-radius: 10px;
     background-color: #fcfcfc;
     display: flex;
-    max-width: 100vw; /* Adjust to use full viewport width */
+    max-width: 100vw; 
     width: 100%;
     flex-direction: column;
     overflow: hidden;
@@ -40,8 +40,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     font: 500 13px Poppins, sans-serif;
   }
@@ -73,27 +73,31 @@
     margin-top: 16px;
     width: 100%;
     padding-left: 19px;
+    padding-right: 19px;
     flex-direction: column;
     align-items: start;
   }
   .chat-bubble {
     border-radius: 10px;
     min-height: 44px;
-    padding: 8px 16px;
-    font: 400 16px/24px Roboto, sans-serif;
-    letter-spacing: 0.5px;
+    padding: 10px 16px;
+    font: 400 16px/24px Poppins, sans-serif;
+    line-height: 27px;
     min-width: 60%;
+    font-size: 20px;
   }
   .user-bubble {
     align-self: end;
     background-color: #fdb453;
     color: #1c1c1c;
     text-align: right;
-    margin-right: 20px;
-    text-align: left;
+    max-width: 60%;
+    margin-right: 30px;
+    text-align: right;
   }
   .ai-bubble {
     align-self: start;
+    max-width: 80%;
     background-color: #e9e7e7;
     color: #49454f;
   }
@@ -107,20 +111,25 @@
     aspect-ratio: 1;
     object-fit: contain;
     object-position: center;
-    width: 14px;
+    width: 45px;
     align-self: end;
+    margin-bottom: 20px;
   }
   /* .action-button { align-self: stretch; border-radius: 10px; min-height: 36px; color: #fcfcfd; text-align: right; letter-spacing: -0.04px; padding: 11px 15px; font: 700 10px Poppins, sans-serif;margin-right: 200px; }  */
   .action-button {
-    align-self: stretch;
+    /* align-self: stretch; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 100px;
     border-radius: 8px; /* Slightly smaller border-radius */
-    min-height: 30px; /* Reduced height */
     color: #ffffff; /* Text color for better contrast */
     text-align: center; /* Center the text */
     letter-spacing: -0.04px;
-    padding: 8px 12px; /* Reduced padding for a smaller button */
-    font: 600 10px Poppins, sans-serif; /* Adjusted font weight for a more compact look */
-    margin-right: 20px; /* Adjusted margin to fit better */
+    padding: 10px 22px 10px 50px; /* Reduced padding for a smaller button */
+    font: 600 14px Poppins, sans-serif; /* Adjusted font weight for a more compact look */
+    /* margin-right: 20px; */
+    text-decoration: none;
     background-color: #fdb453; /* Orange color from your color scheme */
     border: none; /* No border */
     cursor: pointer; /* Pointer on hover */
@@ -129,15 +138,15 @@
   .map-icon {
     aspect-ratio: 1;
     object-fit: contain;
-    object-position: center;
-    width: 19px;
+    width: 22px;
     z-index: 10;
-    margin: -27px 0 0 14px;
+    margin: -30 px 0 0 14px;
   }
   .lawyer-info {
     display: flex;
     justify-content: space-between;
     padding: 13px 17px;
+    margin-bottom: 22px;
   }
   .lawyer-name {
     font-size: 14px;
@@ -149,8 +158,8 @@
   }
   .quick-actions {
     color: #b0b0b0;
+    margin-top: 100px;
     letter-spacing: -0.65px;
-    margin-top: 251px;
     font: 500 12px Poppins, sans-serif;
   }
   /* .predictive-responses { transform: rotate(-1.387777788164829e-17rad); background-color: rgba(168, 185, 227, 0); align-self: end; display: flex; height: 60px; width: 100%; max-width: 329px; padding-top: 16px; align-items: start; gap: 8px; justify-content: end; } */
@@ -158,33 +167,30 @@
     transform: rotate(-1.387777788164829e-17rad);
     background-color: rgba(168, 185, 227, 0);
     display: flex;
-    height: 60px;
     width: 100%; /* Ensure it takes the full width */
     max-width: 80vw; /* Allow it to extend fully across the viewport */
-    padding-top: 16px;
     align-items: center; /* Aligns items vertically to the center */
-    justify-content: center; /* Aligns items horizontally to the center */
     gap: 8px;
     box-sizing: border-box; /* Ensure padding doesn't affect overall width */
   }
 
   .predictive-bubble {
-    align-self: stretch;
+    align-self: left;
     border-radius: 20px;
     background-color: #fdb453;
     min-height: 44px;
     padding: 8px 16px;
     color: #1d192b;
-    font: 400 16px/24px Roboto, sans-serif;
+    font: 400 16px/24px Poppins, sans-serif;
     letter-spacing: 0.5px;
+    border: none;
   }
   /* .input-container { display: flex; margin-top: 15px; gap: 13px; } */
   .input-container {
     display: flex;
     margin-top: 15px;
     gap: 13px;
-    width: 100%; /* Ensure it takes up the full width */
-    max-width: 80vw; /* Allow it to fit the entire viewport width */
+    width: 100%; 
     box-sizing: border-box; /* Include padding and border in the width calculation */
   }
 
@@ -197,6 +203,8 @@
     justify-content: center;
     width: 44px;
     height: 44px;
+    float: left; 
+    border: none;
   }
   .input-field {
     border-radius: 14px;
@@ -205,9 +213,12 @@
     gap: 40px 100px;
     color: #a7a6a6;
     letter-spacing: -0.65px;
-    flex-grow: 1;
     padding: 9px 10px;
     font: 500 17px Poppins, sans-serif;
+    width: calc(100% - 44px);
+    /* flex-grow: 1; */
+    margin-right: 36px;
+    border: none;
   }
   .input-indicator {
     border-radius: 1px;
@@ -278,7 +289,7 @@
       />
     </div>
 
-    <button class="action-button">Go to map</button>
+    <a class="action-button" href="map.html">Go to map</a>
     <img
       src="https://cdn.builder.io/api/v1/image/assets/TEMP/71e29aacc2b5f686f75b09b44ece8a05145e2ae80106f4a3f3c0759693fd3581?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144"
       alt=""
@@ -288,7 +299,7 @@
     <p class="chat-bubble user-bubble">
       Choose a lawyer that you think will be good for my case
     </p>
-
+ 
     <div class="ai-response">
       <p class="chat-bubble ai-bubble">
         Give me more details about your accident please
@@ -343,22 +354,8 @@
           height="10"
         />
       </button>
-      <div class="input-field">
-        <div class="input-indicator" aria-hidden="true"></div>
-        <label for="chat-input" class="visually-hidden">Ask an Eagle</label>
-        <input
-          type="text"
-          id="chat-input"
-          placeholder="Ask an Eagle"
-          aria-label="Ask an Eagle"
-        />
-        <!-- <button type="submit" aria-label="Send message"> -->
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2127e627141941423e155a8fc742a7306333235e6fd8578886c2e00815ad31d0?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144"
-          alt=""
-          class="send-button"
-        />
-      </div>
+      <input class="input-field">
+      </input>
     </div>
   </main>
 </section>

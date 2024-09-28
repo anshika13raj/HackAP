@@ -1,0 +1,249 @@
+<style>
+  .container {
+    transform: rotate(1.387778863499512e-17rad);
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    display: flex;
+    max-width: 100vw;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0; /* Remove margins to fit perfectly */
+    padding: 22px 0; /* Keep vertical padding */
+    zoom: 180%;
+    height: 100%;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+  }
+
+  .header {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 0 4px 0 19px;
+    z-index: 1;
+    position: relative; /* Position for overlaying */
+  }
+  .profile-image {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 40px;
+  }
+  .step-indicator {
+    transform: rotate(-1.3877783671911887e-17rad);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    margin: auto 0;
+  }
+  .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font: 500 13px Poppins, sans-serif;
+  }
+  .step-active {
+    background-color: #fdb453;
+    color: #000;
+  }
+  .step-inactive {
+    background-color: #807c7c;
+    color: #fff;
+  }
+  .step-separator {
+    aspect-ratio: 5.99;
+    object-fit: contain;
+    object-position: center;
+    width: 12px;
+  }
+  .indicator {
+    background-color: #49ad1b;
+    border-radius: 50%;
+    align-self: end;
+    width: 30px;
+    height: 30px;
+    margin-top: 12px;
+    margin-right: 50px;
+  }
+
+  /* Bottom div style */
+  .bottom-section {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+  }
+
+  .bottom-section p {
+    font-size: 18px;
+    color: #333;
+  }
+
+  #map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 50px); /* Adjust height based on header height */
+  }
+</style>
+
+<section class="container">
+  <header class="header">
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets/TEMP/9d4151bc452ed69eeb63d2bd1827edea168389ebce8c60c061d1bcee90e029b1?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144"
+      alt="User profile"
+      class="profile-image"
+    />
+    <div class="step-indicator">
+      <div class="step step-inactive">1</div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144"
+        alt=""
+        class="step-separator"
+      />
+      <div class="step step-active">2</div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6eaaecb5e1520b12f0f76db3beaee37bb8d89cbbd94e34286aa427a2e9f2cc53?placeholderIfAbsent=true&apiKey=79f421a6b3a64640b1fce8dcacaf2144"
+        alt=""
+        class="step-separator"
+      />
+      <div class="step step-inactive">3</div>
+    </div>
+    <div class="indicator" aria-hidden="true"></div>
+  </header>
+
+  <!-- <div class="bottom-section">
+    <p>/Your Content Here</p>
+  </div> -->
+
+  <div id="map-container"></div>
+</section>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb_kaS3RzuG-8ajweuDhFzwu-_yOC4SDI&callback=initMap"
+  async
+  defer
+></script>
+<script>
+  function initMap() {
+    const center = { lat: 17.6868, lng: 83.2185 };
+
+    // Define a custom light-mode neutral color scheme
+    const styles = [
+      { elementType: "geometry", stylers: [{ color: "#f5f5f5" }] },
+      { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#616161" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#f5f5f5" }] },
+      {
+        featureType: "administrative",
+        elementType: "geometry",
+        stylers: [{ visibility: "off" }],
+      },
+      {
+        featureType: "administrative.land_parcel",
+        stylers: [{ visibility: "off" }],
+      },
+      {
+        featureType: "administrative.neighborhood",
+        stylers: [{ visibility: "off" }],
+      },
+      { featureType: "poi", stylers: [{ visibility: "off" }] },
+      {
+        featureType: "poi.park",
+        elementType: "geometry",
+        stylers: [{ color: "#e5e5e5" }],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [{ color: "#ffffff" }],
+      },
+      {
+        featureType: "road.arterial",
+        elementType: "geometry.fill",
+        stylers: [{ color: "#ffffff" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry.fill",
+        stylers: [{ color: "#dadada" }],
+      },
+      {
+        featureType: "road.highway.controlled_access",
+        elementType: "geometry.fill",
+        stylers: [{ color: "#e5e5e5" }],
+      },
+      {
+        featureType: "road.local",
+        elementType: "geometry.fill",
+        stylers: [{ color: "#ffffff" }],
+      },
+      { featureType: "transit", stylers: [{ visibility: "off" }] },
+      {
+        featureType: "water",
+        elementType: "geometry",
+        stylers: [{ color: "#c9c9c9" }],
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#9e9e9e" }],
+      },
+    ];
+
+    function getRandomCoords(center, radius) {
+      const y0 = center.lat;
+      const x0 = center.lng;
+      const rd = radius / 111300; // Convert radius from meters to degrees
+
+      const u = Math.random();
+      const v = Math.random();
+      const w = rd * Math.sqrt(u);
+      const t = 2 * Math.PI * v;
+      const x = w * Math.cos(t);
+      const y = w * Math.sin(t);
+
+      // Adjust the x and y coordinates
+      const newLat = y + y0;
+      const newLng = x + x0;
+
+      return { lat: newLat, lng: newLng };
+    }
+
+    const map = new google.maps.Map(document.getElementById("map-container"), {
+      zoom: 15,
+      center: center,
+      styles: styles,
+      disableDefaultUI: true, // Disable default Google Maps controls
+    });
+
+    const customIcon = {
+      url: "marker_unselected.png", // Example icon URL
+      // scaledSize: new google.maps.Size(40, 40),
+      origin: new google.maps.Point(0, 0), // Origin of the icon
+      anchor: new google.maps.Point(20, 20), // Anchor point (centered)
+    };
+
+    for (let i = 0; i < 100; i++) {
+      const randomCoords = getRandomCoords(center, 30000);
+      new google.maps.Marker({
+        position: randomCoords,
+        map: map,
+        icon: customIcon,
+      });
+    }
+  }
+</script>
