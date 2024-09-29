@@ -239,10 +239,14 @@
 
     for (let i = 0; i < 100; i++) {
       const randomCoords = getRandomCoords(center, 30000);
-      new google.maps.Marker({
+      const marker = new google.maps.Marker({
         position: randomCoords,
         map: map,
         icon: customIcon,
+      });
+
+      marker.addListener("click", function () {
+        window.location.href = "lawyerprofile.html";
       });
     }
   }
